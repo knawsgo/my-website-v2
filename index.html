@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dad Rebuild Program – Get Lean. Lose Fat. Rebuild Confidence.</title>
+  <meta name="description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence.">
+  <meta property="og:title" content="Dad Rebuild Program" />
+  <meta property="og:description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0B0B0B" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0B0B0B;         /* Black */
+      --fg:#F6F6F6;         /* Off-white */
+      --muted:#CFCFCF;
+      --gold:#C9A227;       /* Accent Gold */
+      --card:#121212;
+      --max:1120px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--fg); background:var(--bg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.6;
+    }
+    a{color:var(--fg); text-decoration:none}
+    .container{max-width:var(--max); margin-inline:auto; padding:28px 20px}
+    .btn{
+      display:inline-block; padding:14px 22px; border-radius:999px; font-weight:600;
+      background:var(--gold); color:#111; transition:transform .08s ease, opacity .2s;
+    }
+    .btn:hover{transform:translateY(-1px); opacity:.95}
+    .btn.outline{background:transparent; color:var(--fg); border:1px solid var(--fg)}
+    .pill{display:inline-flex; gap:8px; align-items:center; font-size:.85rem; color:#111; background:var(--gold); padding:6px 12px; border-radius:999px; font-weight:600}
+    header.nav{
+      position:sticky; top:0; z-index:30; backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(11,11,11,.7); border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav-row{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px; font-family:Montserrat,Inter,sans-serif}
+    .brand-logo{width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,var(--gold),#f2d77a); display:inline-block}
+    nav a{opacity:.9; margin-left:18px; font-weight:600; font-size:.95rem}
+    /* Hero */
+    .hero{padding:70px 20px 40px}
+    .hero h1{
+      font-family:Montserrat,Inter,sans-serif; font-weight:800; line-height:1.05;
+      font-size:clamp(2.2rem, 4vw + 1rem, 4rem); margin:12px 0 10px;
+    }
+    .hero p{max-width:760px; opacity:.9; font-size:1.05rem}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .hero-card{
+      margin-top:28px; background:var(--card); border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius); padding:18px; display:flex; gap:16px; align-items:center; flex-wrap:wrap
+    }
+    /* Grid sections */
+    .section{padding:36px 0}
+    h2{font-family:Montserrat,Inter,sans-serif; font-size:clamp(1.6rem, 1vw + 1rem, 2.2rem); margin:0 0 16px}
+    .muted{color:var(--muted)}
+    .cards{display:grid; grid-template-columns:1fr; gap:14px}
+    @media (min-width:700px){ .cards{grid-template-columns:repeat(3,1fr)} }
+    .card{
+      background:var(--card); border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius); padding:18px
+    }
+    .card h3{margin:6px 0 8px; font-family:Montserrat,Inter,sans-serif}
+    .check{color:var(--gold); margin-right:8px}
+    /* Pricing */
+    .price{
+      display:flex; align-items:flex-end; gap:8px; margin:6px 0 12px
+    }
+    .price .big{font-family:Montserrat,Inter,sans-serif; font-size:2.2rem; font-weight:800}
+    .badge{border:1px solid rgba(255,255,255,.2); padding:4px 10px; border-radius:999px; font-size:.8rem; color:var(--muted)}
+    /* FAQ */
+    details{
+      background:var(--card); border:1px solid rgba(255,255,255,.06);
+      border-radius:12px; padding:14px 16px
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:600}
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06); padding:30px 20px; color:var(--muted)}
+    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+    .small{font-size:.9rem}
+    /* Utility */
+    .stack{display:grid; gap:10px}
+    .two{display:grid; gap:14px}
+    @media (min-width:900px){ .two{grid-template-columns:1.15fr .85fr} }
+    .accent{color:var(--gold)}
+    .center{text-align:center}
+    .hide{display:none}
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav-row">
+      <a class="brand" href="#top" aria-label="Brand Home">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span>Dad Rebuild</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#program">Program</a>
+        <a href="#proof">Proof</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#apply" class="btn" style="padding:8px 14px">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero container">
+    <span class="pill">Built for single & divorced dads</span>
+    <h1>Get Lean. Lose Fat. <span class="accent">Rebuild Confidence.</span></h1>
+    <p>12-week coaching designed for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and feel attractive again—while showing up stronger for your kids.</p>
+    <div class="cta-row" role="group" aria-label="Primary actions">
+      <a class="btn" href="#apply">Start Your Assessment</a>
+      <a class="btn outline" href="#proof" aria-label="Watch client wins">See Client Wins</a>
+    </div>
+    <div class="hero-card" aria-live="polite">
+      <div>✔️ Weekly 1:1 accountability</div>
+      <div>✔️ Gym or home training</div>
+      <div>✔️ Nutrition that fits custody life</div>
+    </div>
+  </main>
+
+  <!-- Social Proof -->
+  <section id="proof" class="section container">
+    <h2>Wins from Dads Like You</h2>
+    <p class="muted">Real transformations. Real confidence.</p>
+    <div class="cards" role="list">
+      <article class="card" role="listitem">
+        <h3>“Down 18 lbs in 10 weeks”</h3>
+        <p>Kept muscle, lost the gut, and felt comfortable taking my shirt off at the pool with my kids.</p>
+        <span class="badge">D.M.</span>
+      </article>
+      <article class="card" role="listitem">
+        <h3>“Energy + Confidence back”</h3>
+        <p>Went from low energy to crushing workouts and actually looking forward to dates again.</p>
+        <span class="badge">J.R.</span>
+      </article>
+      <article class="card" role="listitem">
+        <h3>“Finally understand macros”</h3>
+        <p>The food plan worked with my custody schedule—no stress, no guesswork.</p>
+        <span class="badge">A.K.</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- Program -->
+  <section id="program" class="section container two">
+    <div>
+      <h2>The Dad Rebuild Program</h2>
+      <p class="muted">A simple system tailored to your reality: work, kids, stress, and limited time.</p>
+      <div class="stack">
+        <div class="card">
+          <h3><span class="check">▣</span>Custom Training</h3>
+          <p>3–4 days/week. Gym or home. Progressive plan that fits your schedule and equipment.</p>
+        </div>
+        <div class="card">
+          <h3><span class="check">▣</span>Nutrition Blueprint</h3>
+          <p>Calories & macros with plug-and-play meals that work with custody life—no crash diets.</p>
+        </div>
+        <div class="card">
+          <h3><span class="check">▣</span>Accountability</h3>
+          <p>Weekly 1:1 check-ins, form reviews, and messaging support so you never fall off.</p>
+        </div>
+      </div>
+    </div>
+    <aside aria-label="Guarantee" class="card">
+      <h3>My Guarantee</h3>
+      <p>Don’t see visible results in 12 weeks? I’ll coach you for free until you do. Zero risk.</p>
+      <a class="btn" href="#apply">Apply Now</a>
+    </aside>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section container">
+    <h2>Simple Pricing</h2>
+    <p class="muted">Premium 1:1 coaching for 12 weeks. Payment plans available.</p>
+    <div class="cards">
+      <article class="card">
+        <span class="badge">Most Popular</span>
+        <h3>Dad Rebuild – 12 Weeks</h3>
+        <div class="price">
+          <span class="big">$1,500</span><span class="muted">one-time</span>
+        </div>
+        <ul>
+          <li>Custom plan + weekly 1:1 calls</li>
+          <li>Nutrition targets & templates</li>
+          <li>Messenger support</li>
+          <li>Form checks & adjustments</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn" href="#apply">Apply Now</a>
+          <a class="btn outline" href="#faq">Questions?</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="badge">Flexible</span>
+        <h3>Payment Plan</h3>
+        <div class="price">
+          <span class="big">$600</span><span class="muted">/ mo × 3</span>
+        </div>
+        <p class="muted">Same program, spread out payments.</p>
+        <a class="btn" href="#apply">Apply with Payment Plan</a>
+      </article>
+      <article class="card">
+        <span class="badge">Upsell (Optional)</span>
+        <h3>Brotherhood Add-On</h3>
+        <div class="price">
+          <span class="big">$150</span><span class="muted">/ mo</span>
+        </div>
+        <p class="muted">Weekly group call + community accountability.</p>
+        <a class="btn outline" href="#apply">Add to Application</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section container">
+    <h2>FAQ</h2>
+    <details>
+      <summary>How fast will I see results?</summary>
+      <p>Most dads notice changes in 2–3 weeks; meaningful cuts happen by weeks 6–12 with consistency.</p>
+    </details>
+    <details>
+      <summary>Do I need a gym?</summary>
+      <p>No. I build for whatever you’ve got—gym or home, minimal gear required.</p>
+    </details>
+    <details>
+      <summary>What if I’ve “tried everything”?</summary>
+      <p>You’ve tried tactics. This is a system: training, nutrition, and accountability built for your reality.</p>
+    </details>
+    <details>
+      <summary>What if life gets busy with kids/work?</summary>
+      <p>We design around custody schedules and travel. The plan flexes; the standard doesn’t.</p>
+    </details>
+  </section>
+
+  <!-- Apply -->
+  <section id="apply" class="section container two">
+    <div>
+      <h2>Start Your Assessment</h2>
+      <p class="muted">Takes 2–3 minutes. I’ll review and send you a link to a quick call.</p>
+      <ol>
+        <li>Complete the form</li>
+        <li>Book a 10-min call</li>
+        <li>Get your plan + start week 1</li>
+      </ol>
+      <div class="cta-row">
+        <!-- Replace the hrefs below with your real links -->
+        <a class="btn" href="https://forms.gle/your-typeform-or-google-form" target="_blank" rel="noopener">Open Assessment Form</a>
+        <a class="btn outline" href="https://calendly.com/your-handle/10min" target="_blank" rel="noopener">Book 10-min Call</a>
+      </div>
+      <p class="small muted" style="margin-top:8px">Prefer DM? Message me on IG/TikTok: @yourhandle</p>
+    </div>
+    <form class="card" aria-label="Quick interest form">
+      <h3>Quick Interest</h3>
+      <label class="small muted" for="name">Name</label>
+      <input id="name" name="name" required placeholder="Your name" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f0f0f;color:var(--fg);margin:6px 0 10px">
+      <label class="small muted" for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f0f0f;color:var(--fg);margin:6px 0 10px">
+      <label class="small muted" for="goal">Goal (1–2 sentences)</label>
+      <textarea id="goal" name="goal" rows="3" placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f0f0f;color:var(--fg);margin:6px 0 12px"></textarea>
+      <button class="btn" type="submit" aria-label="Submit quick interest">Submit</button>
+      <p class="small muted" style="margin-top:8px">This demo form doesn’t send anywhere—use the buttons on the left to connect your real tools.</p>
+    </form>
+  </section>
+
+  <footer class="container">
+    <div class="foot">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span class="muted">© <span id="y"></span> Dad Rebuild</span>
+      </div>
+      <div class="small">
+        <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">IG</a> ·
+        <a href="https://tiktok.com/@yourhandle" target="_blank" rel="noopener">TikTok</a> ·
+        <a href="mailto:you@example.com">Email</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // tiny enhancements
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
