@@ -258,17 +258,21 @@
       </div>
       <p class="small muted" style="margin-top:8px">Prefer DM? Message me on IG/TikTok: @max._.julien</p>
     </div>
-    <form class="card" aria-label="Quick interest form">
-      <h3>Quick Interest</h3>
-      <label class="small muted" for="name">Name</label>
-      <input id="name" name="name" required placeholder="Your name" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f0f0f;color:var(--fg);margin:6px 0 10px">
-      <label class="small muted" for="email">Email</label>
-      <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f0f0f;color:var(--fg);margin:6px 0 10px">
-      <label class="small muted" for="goal">Goal (1–2 sentences)</label>
-      <textarea id="goal" name="goal" rows="3" placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0f0f0f;color:var(--fg);margin:6px 0 12px"></textarea>
-      <button class="btn" type="submit" aria-label="Submit quick interest">Submit</button>
-      <p class="small muted" style="margin-top:8px">This demo form doesn’t send anywhere—use the buttons on the left to connect your real tools.</p>
-    </form>
+    <form class="card" aria-label="Quick interest form" action="https://formspree.io/f/xblzzpoa" method="POST">
+  <h3>Quick Interest</h3>
+
+  <label class="small muted" for="name">Name</label>
+  <input id="name" name="name" required placeholder="Your name" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+
+  <label class="small muted" for="email">Email</label>
+  <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+
+  <label class="small muted" for="goal">Goal</label>
+  <textarea id="goal" name="goal" rows="3" placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids..." style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;"></textarea>
+
+  <button class="btn" type="submit" aria-label="Submit quick interest" style="margin-top:10px;">Submit</button>
+</form>
+
   </section>
 
   <footer class="container">
