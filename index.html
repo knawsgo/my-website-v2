@@ -258,19 +258,29 @@
       </div>
       <p class="small muted" style="margin-top:8px">Prefer DM? Message me on IG/TikTok: @max._.julien</p>
     </div>
-    <form class="card" aria-label="Quick interest form" action="https://formspree.io/f/xblzzpoa" method="POST">
-  <h3>Quick Interest</h3>
+    <form class="card" aria-label="Quick interest form"
+      action="https://formspree.io/f/xblzzpoa" method="POST">
 
   <label class="small muted" for="name">Name</label>
-  <input id="name" name="name" required placeholder="Your name" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+  <input id="name" name="name" required placeholder="Your name"
+         style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
 
   <label class="small muted" for="email">Email</label>
-  <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+  <input id="email" name="email" type="email" required placeholder="you@example.com"
+         style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
 
   <label class="small muted" for="goal">Goal</label>
-  <textarea id="goal" name="goal" rows="3" placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids..." style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;"></textarea>
+  <textarea id="goal" name="goal" rows="3"
+            placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…"
+            style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;"></textarea>
 
-  <button class="btn" type="submit" aria-label="Submit quick interest" style="margin-top:10px;">Submit</button>
+  <!-- Force a copy to your inbox every time -->
+  <input type="hidden" name="_cc" value="marcuscreese94@gmail.com">
+  <!-- Optional: nicer subject line in your inbox -->
+  <input type="hidden" name="_subject" value="New Bossman System lead">
+
+  <button class="btn" type="submit" aria-label="Submit quick interest"
+          style="margin-top:10px;">Submit</button>
 </form>
 
   </section>
