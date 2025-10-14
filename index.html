@@ -3,95 +3,215 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dad Rebuild Program – Get Lean. Lose Fat. Rebuild Confidence.</title>
+  <title>Bossman System – Command Your Body. Command Your Life.</title>
+
+  <!-- Meta / OG -->
   <meta name="description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence.">
-  <meta property="og:title" content="Dad Rebuild Program" />
+  <meta property="og:title" content="Bossman System" />
   <meta property="og:description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" />
   <meta name="theme-color" content="#0B0B0B" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon / Touch (using your Imgur asset) -->
+  <link rel="icon" href="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand">
+  <link rel="apple-touch-icon" href="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+
   <style>
     :root{
-      --bg:#0B0B0B;         /* Black */
-      --fg:#F6F6F6;         /* Off-white */
+      --bg:#0A0A0A;           /* Deeper black */
+      --bg-2:#0F0F0F;         /* Panels */
+      --fg:#F5F5F5;           /* Off-white */
       --muted:#CFCFCF;
-      --gold:#C9A227;       /* Accent Gold */
-      --card:#121212;
-      --max:1120px;
-      --radius:14px;
+      --line:#1E1E1E;         /* Hairline separators */
+      --gold:#D4AF37;         /* Metallic gold */
+      --gold-2:#B8901F;       /* Deeper gold */
+      --gold-3:#F2D36A;       /* Lighter gold for gradients */
+      --max:1140px;
+      --radius:16px;
+      --radius-sm:12px;
+      --shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03);
+      --blur:10px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
     body{
-      margin:0; color:var(--fg); background:var(--bg);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.6;
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
+      /* global subtle noise to feel premium (embedded SVG) */
+      background-image:
+        radial-gradient(1200px 600px at 60% -10%, rgba(212,175,55,.08), transparent 55%),
+        radial-gradient(900px 500px at -10% 20%, rgba(212,175,55,.06), transparent 60%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .03 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-size:auto, auto, 140px 140px;
     }
+
     a{color:var(--fg); text-decoration:none}
-    .container{max-width:var(--max); margin-inline:auto; padding:28px 20px}
-    .btn{
-      display:inline-block; padding:14px 22px; border-radius:999px; font-weight:600;
-      background:var(--gold); color:#111; transition:transform .08s ease, opacity .2s;
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold); outline-offset: 2px;
+      box-shadow: 0 0 0 3px rgba(212,175,55,.25);
+      border-radius: 10px;
     }
-    .btn:hover{transform:translateY(-1px); opacity:.95}
-    .btn.outline{background:transparent; color:var(--fg); border:1px solid var(--fg)}
-    .pill{display:inline-flex; gap:8px; align-items:center; font-size:.85rem; color:#111; background:var(--gold); padding:6px 12px; border-radius:999px; font-weight:600}
+
+    .container{max-width:var(--max); margin-inline:auto; padding:28px 20px}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 24px; border-radius:999px; font-weight:700; letter-spacing:.2px;
+      color:#131313; transition:transform .08s ease, opacity .2s, box-shadow .2s;
+      background:linear-gradient(180deg, var(--gold-3), var(--gold));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 6px 18px rgba(212,175,55,.28);
+    }
+    .btn:hover{transform:translateY(-1px); opacity:.98}
+    .btn:active{transform:translateY(0)}
+    .btn svg{width:18px; height:18px; fill:#1a1a1a}
+    .btn.outline{
+      background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.16);
+      box-shadow:none;
+    }
+    .btn.outline:hover{border-color:rgba(255,255,255,.28)}
+
+    /* Pill */
+    .pill{
+      display:inline-flex; gap:8px; align-items:center; font-size:.85rem; color:#111;
+      background:linear-gradient(180deg, var(--gold-3), var(--gold));
+      padding:6px 12px; border-radius:999px; font-weight:700;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 6px 18px rgba(212,175,55,.18);
+    }
+
+    /* Nav */
     header.nav{
-      position:sticky; top:0; z-index:30; backdrop-filter:saturate(140%) blur(8px);
-      background:rgba(11,11,11,.7); border-bottom:1px solid rgba(255,255,255,.06)
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(var(--blur));
+      background:rgba(10,10,10,.65); border-bottom:1px solid rgba(255,255,255,.06);
     }
     .nav-row{display:flex; align-items:center; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px; font-family:Montserrat,Inter,sans-serif}
-    .brand-logo{width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,var(--gold),#f2d77a); display:inline-block}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px; font-family:Montserrat,Inter,sans-serif}
+    .brand-logo{
+      width:42px; height:42px; border-radius:10px; object-fit:contain; display:inline-block; background:transparent;
+      box-shadow:0 0 0 1px rgba(212,175,55,.28), 0 8px 18px rgba(0,0,0,.35);
+    }
     nav a{opacity:.9; margin-left:18px; font-weight:600; font-size:.95rem}
+    nav a:hover{opacity:1}
+
     /* Hero */
-    .hero{padding:70px 20px 40px}
+    .hero{
+      padding:84px 20px 48px; position:relative; overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
+    /* Hero luxury layers */
+    .hero::before{
+      /* soft vignette from edges */
+      content:""; position:absolute; inset:-10%;
+      background:radial-gradient(1200px 600px at 70% -10%, rgba(212,175,55,.10), transparent 50%),
+                 radial-gradient(900px 520px at 0% 20%, rgba(212,175,55,.07), transparent 60%);
+      pointer-events:none;
+    }
+    .hero::after{
+      /* ultra subtle diagonal pinstripe overlay for texture */
+      content:""; position:absolute; inset:0;
+      background-image: linear-gradient(135deg, rgba(255,255,255,.04) 0.5px, transparent 0.5px);
+      background-size: 8px 8px; opacity:.15; mix-blend-mode:soft-light; pointer-events:none;
+    }
+
     .hero h1{
+      position:relative;
       font-family:Montserrat,Inter,sans-serif; font-weight:800; line-height:1.05;
-      font-size:clamp(2.2rem, 4vw + 1rem, 4rem); margin:12px 0 10px;
+      font-size:clamp(2.3rem, 4vw + 1rem, 4.2rem); margin:14px 0 10px;
+      text-shadow:0 2px 24px rgba(212,175,55,.12);
     }
-    .hero p{max-width:760px; opacity:.9; font-size:1.05rem}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .hero .sub{max-width:780px; opacity:.92; font-size:1.06rem}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
     .hero-card{
-      margin-top:28px; background:var(--card); border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius); padding:18px; display:flex; gap:16px; align-items:center; flex-wrap:wrap
+      margin-top:26px; background:rgba(18,18,18,.8);
+      border-radius:var(--radius); padding:16px; display:flex; gap:18px; align-items:center; flex-wrap:wrap;
+      border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow);
     }
-    /* Grid sections */
-    .section{padding:36px 0}
-    h2{font-family:Montserrat,Inter,sans-serif; font-size:clamp(1.6rem, 1vw + 1rem, 2.2rem); margin:0 0 16px}
+
+    /* Section scaffold */
+    .section{padding:42px 0; position:relative}
+    .section + .section{border-top:1px solid var(--line)}
+    h2{
+      font-family:Montserrat,Inter,sans-serif; font-size:clamp(1.6rem, 1vw + 1rem, 2.2rem); margin:0 0 16px;
+      display:inline-block; position:relative;
+    }
+    /* gold underline */
+    h2::after{
+      content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity:.75;
+    }
     .muted{color:var(--muted)}
-    .cards{display:grid; grid-template-columns:1fr; gap:14px}
-    @media (min-width:700px){ .cards{grid-template-columns:repeat(3,1fr)} }
+    .accent{color:var(--gold)}
+
+    /* Cards grid */
+    .cards{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:720px){ .cards{grid-template-columns:repeat(3,1fr)} }
     .card{
-      background:var(--card); border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius); padding:18px
+      background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.006));
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      padding:20px;
     }
     .card h3{margin:6px 0 8px; font-family:Montserrat,Inter,sans-serif}
     .check{color:var(--gold); margin-right:8px}
-    /* Pricing */
-    .price{
-      display:flex; align-items:flex-end; gap:8px; margin:6px 0 12px
+
+    /* Pricing embellish */
+    .price{display:flex; align-items:flex-end; gap:8px; margin:6px 0 12px}
+    .price .big{font-family:Montserrat,Inter,sans-serif; font-size:2.25rem; font-weight:800; letter-spacing:.2px}
+    .badge{
+      border:1px solid rgba(255,255,255,.18); padding:4px 10px; border-radius:999px;
+      font-size:.78rem; color:var(--muted); background:rgba(255,255,255,.02);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
     }
-    .price .big{font-family:Montserrat,Inter,sans-serif; font-size:2.2rem; font-weight:800}
-    .badge{border:1px solid rgba(255,255,255,.2); padding:4px 10px; border-radius:999px; font-size:.8rem; color:var(--muted)}
-    /* FAQ */
-    details{
-      background:var(--card); border:1px solid rgba(255,255,255,.06);
-      border-radius:12px; padding:14px 16px
-    }
-    details + details{margin-top:10px}
+
+    details{background:rgba(18,18,18,.8); border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow)}
+    details + details{margin-top:12px}
     summary{cursor:pointer; font-weight:600}
+
     /* Footer */
-    footer{border-top:1px solid rgba(255,255,255,.06); padding:30px 20px; color:var(--muted)}
+    footer{border-top:1px solid var(--line); padding:30px 20px; color:var(--muted)}
     .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+
+    /* Utilities */
+    .stack{display:grid; gap:12px}
+    .two{display:grid; gap:16px}
+    @media (min-width:940px){ .two{grid-template-columns:1.15fr .85fr} }
     .small{font-size:.9rem}
-    /* Utility */
-    .stack{display:grid; gap:10px}
-    .two{display:grid; gap:14px}
-    @media (min-width:900px){ .two{grid-template-columns:1.15fr .85fr} }
-    .accent{color:var(--gold)}
     .center{text-align:center}
     .hide{display:none}
+
+    /* Sticky Mobile CTA (luxury bar) */
+    .sticky-cta{
+      position:fixed; left:16px; right:16px; bottom:16px; z-index:60;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:10px 12px; border-radius:999px;
+      background:rgba(13,13,13,.75); backdrop-filter: blur(var(--blur));
+      border:1px solid rgba(255,255,255,.1); box-shadow: 0 12px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .sticky-cta .meta{
+      display:flex; align-items:center; gap:10px; font-weight:700;
+      color:var(--fg);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold));
+      box-shadow:0 0 12px rgba(212,175,55,.6);
+    }
+    .sticky-cta .btn{padding:10px 16px}
+    /* Show on small screens only */
+    @media (min-width:860px){ .sticky-cta{display:none} }
   </style>
 </head>
 <body>
@@ -99,8 +219,8 @@
   <header class="nav">
     <div class="container nav-row">
       <a class="brand" href="#top" aria-label="Brand Home">
-        <span class="brand-logo" aria-hidden="true"></span>
-        <span>Dad Rebuild</span>
+        <img class="brand-logo" src="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" alt="Bossman System logo">
+        <span>Bossman System</span>
       </a>
       <nav aria-label="Main">
         <a href="#program">Program</a>
@@ -113,12 +233,17 @@
 
   <!-- Hero -->
   <main id="top" class="hero container">
+    <img src="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" alt="Bossman System" style="height:68px;margin-bottom:14px;border-radius:12px;display:block;">
     <span class="pill">Built for single & divorced dads</span>
-    <h1>Get Lean. Lose Fat. <span class="accent">Rebuild Confidence.</span></h1>
-    <p>12-week coaching designed for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and feel attractive again—while showing up stronger for your kids.</p>
+    <h1><span class="accent">Command Your Body.</span> Command Your Life.</h1>
+    <p class="sub">12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and feel attractive again—while showing up stronger for your kids.</p>
     <div class="cta-row" role="group" aria-label="Primary actions">
-      <a class="btn" href="#apply">Start Your Assessment</a>
-      <a class="btn outline" href="#proof" aria-label="Watch client wins">See Client Wins</a>
+      <a class="btn" href="#apply">
+        <!-- arrow icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
+        <span>Start Your Assessment</span>
+      </a>
+      <a class="btn outline" href="#proof" aria-label="See client wins">See Client Wins</a>
     </div>
     <div class="hero-card" aria-live="polite">
       <div>✔️ Weekly 1:1 accountability</div>
@@ -133,16 +258,19 @@
     <p class="muted">Real transformations. Real confidence.</p>
     <div class="cards" role="list">
       <article class="card" role="listitem">
+        <span class="badge">Verified</span>
         <h3>“Down 18 lbs in 10 weeks”</h3>
         <p>Kept muscle, lost the gut, and felt comfortable taking my shirt off at the pool with my kids.</p>
         <span class="badge">D.M.</span>
       </article>
       <article class="card" role="listitem">
+        <span class="badge">Verified</span>
         <h3>“Energy + Confidence back”</h3>
         <p>Went from low energy to crushing workouts and actually looking forward to dates again.</p>
         <span class="badge">J.R.</span>
       </article>
       <article class="card" role="listitem">
+        <span class="badge">Verified</span>
         <h3>“Finally understand macros”</h3>
         <p>The food plan worked with my custody schedule—no stress, no guesswork.</p>
         <span class="badge">A.K.</span>
@@ -153,7 +281,7 @@
   <!-- Program -->
   <section id="program" class="section container two">
     <div>
-      <h2>The Dad Rebuild Program</h2>
+      <h2>The Bossman System</h2>
       <p class="muted">A simple system tailored to your reality: work, kids, stress, and limited time.</p>
       <div class="stack">
         <div class="card">
@@ -184,7 +312,7 @@
     <div class="cards">
       <article class="card">
         <span class="badge">Most Popular</span>
-        <h3>Dad Rebuild – 12 Weeks</h3>
+        <h3>Bossman System – 12 Weeks</h3>
         <div class="price">
           <span class="big">$1,500</span><span class="muted">one-time</span>
         </div>
@@ -210,7 +338,7 @@
       </article>
       <article class="card">
         <span class="badge">Upsell (Optional)</span>
-        <h3>Brotherhood Add-On</h3>
+        <h3>Bossman Brotherhood Add-On</h3>
         <div class="price">
           <span class="big">$150</span><span class="muted">/ mo</span>
         </div>
@@ -252,66 +380,286 @@
         <li>Get your plan + start week 1</li>
       </ol>
       <div class="cta-row">
-        <!-- Replace the hrefs below with your real links -->
-<a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">Start Your Assessment</a>
+        <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
+          <span>Start Your Assessment</span>
+        </a>
         <a class="btn outline" href="https://calendly.com/your-handle/10min" target="_blank" rel="noopener">Book 10-min Call</a>
       </div>
       <p class="small muted" style="margin-top:8px">Prefer DM? Message me on IG/TikTok: @max._.julien</p>
     </div>
+
     <form class="card" aria-label="Quick interest form"
       action="https://formspree.io/f/xblzzpoa" method="POST">
+      <label class="small muted" for="name">Name</label>
+      <input id="name" name="name" required placeholder="Your name"
+             style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;">
 
-  <label class="small muted" for="name">Name</label>
-  <input id="name" name="name" required placeholder="Your name"
-         style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+      <label class="small muted" for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com"
+             style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;">
 
-  <label class="small muted" for="email">Email</label>
-  <input id="email" name="email" type="email" required placeholder="you@example.com"
-         style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+      <label class="small muted" for="goal">Goal</label>
+      <textarea id="goal" name="goal" rows="3"
+                placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…"
+                style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;"></textarea>
 
-  <label class="small muted" for="goal">Goal</label>
-  <textarea id="goal" name="goal" rows="3"
-            placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…"
-            style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;"></textarea>
+      <!-- Force a copy to your inbox every time -->
+      <input type="hidden" name="_cc" value="marcuscreese94@gmail.com">
+      <!-- Inbox subject line -->
+      <input type="hidden" name="_subject" value="New Bossman System lead">
 
-  <!-- Force a copy to your inbox every time -->
-  <input type="hidden" name="_cc" value="marcuscreese94@gmail.com">
-  <!-- Optional: nicer subject line in your inbox -->
-  <input type="hidden" name="_subject" value="New Bossman System lead">
-
-  <button class="btn" type="submit" aria-label="Submit quick interest"
-          style="margin-top:10px;">Submit</button>
-</form>
-
+      <button class="btn" type="submit" aria-label="Submit quick interest" style="margin-top:12px;">Submit</button>
+    </form>
   </section>
 
+  <!-- Footer -->
   <footer class="container">
     <div class="foot">
       <div class="brand">
-        <span class="brand-logo" aria-hidden="true"></span>
-        <span class="muted">© <span id="y"></span> Dad Rebuild</span>
+        <img class="brand-logo" src="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" alt="Bossman System logo">
+        <span class="muted">© <span id="y"></span> Bossman System</span>
       </div>
       <div class="small">
-        <footer class="container">
-  <div class="foot">
-    <div class="brand">
-      <span class="brand-logo" aria-hidden="true"></span>
-      <span class="muted">© <span id="y"></span> Dad Rebuild</span>
-    </div>
-    <div class="small">
-      <a href="https://instagram.com/max._.julien" target="_blank" rel="noopener">Instagram</a> |
-      <a href="https://www.facebook.com/PremoCreese" target="_blank" rel="noopener">Facebook</a> |
-      <a href="https://www.tiktok.com/@marcus.creese" target="_blank" rel="noopener">TikTok</a> |
-      <a href="mailto:marcuscreese4@gmail.com">Email</a>
-    </div>
-  </div>
-</footer>
-
+        <a href="https://instagram.com/max._.julien" target="_blank" rel="noopener">Instagram</a> |
+        <a href="https://www.facebook.com/PremoCreese" target="_blank" rel="noopener">Facebook</a> |
+        <a href="https://www.tiktok.com/@marcus.creese" target="_blank" rel="noopener">TikTok</a> |
+        <a href="mailto:marcuscreese4@gmail.com">Email</a>
       </div>
     </div>
   </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta" role="complementary" aria-label="Quick Apply bar">
+    <div class="meta">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Bossman System</span>
+    </div>
+    <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
+      <span>Start</span>
+    </a>
+  </div>
+
+  <!-- Multivariate: Tagline + Subheadline + CTA Text + Destination -->
   <script>
-    // tiny enhancements
+  (() => {
+    const TAGLINE = {A:"Command Your Body. Command Your Life.", B:"Discipline. Power. Results."};
+    const SUBHEAD = {
+      A:"12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and feel attractive again—while showing up stronger for your kids.",
+      B:"Drop 10–20 lbs. Build muscle. Lead your family by example—without living in the gym or wrecking your schedule."
+    };
+    const CTA_TEXT = {A:"Start Your Assessment", B:"Start Week 1"};
+    const DESTINATION = {D1:"FORM", D2:"APPLY"};
+
+    const FORM_URL = "https://forms.gle/zqNKXEdhWR6UJ5CM9";
+    const APPLY_ANCHOR = "#apply";
+
+    function pickStable(key, variants){
+      const tsKey = key+"_ts";
+      let v = localStorage.getItem(key);
+      let ts = parseInt(localStorage.getItem(tsKey)||"0",10);
+      const expired = Date.now()-ts > 30*24*60*60*1000;
+      if(!v || !(v in variants) || expired){
+        const keys = Object.keys(variants);
+        v = keys[Math.floor(Math.random()*keys.length)];
+        localStorage.setItem(key, v);
+        localStorage.setItem(tsKey, Date.now().toString());
+      }
+      return v;
+    }
+
+    const vTag = pickStable("bossman_tagline_variant", TAGLINE);
+    const vSub = pickStable("bossman_subhead_variant", SUBHEAD);
+    const vCta = pickStable("bossman_cta_variant", CTA_TEXT);
+    const vDest = pickStable("bossman_dest_variant", DESTINATION);
+
+    // Apply H1 (accent first phrase if split by ". ")
+    const h1 = document.querySelector(".hero h1");
+    if(h1){
+      const txt = TAGLINE[vTag];
+      const parts = txt.split(". ");
+      h1.innerHTML = parts.length>1
+        ? `<span class="accent">${parts[0]}.</span> ${parts.slice(1).join(". ")}`
+        : txt;
+    }
+    // Subhead
+    const sub = document.querySelector(".hero .sub");
+    if(sub) sub.textContent = SUBHEAD[vSub];
+    // CTA text (hero + form buttons)
+    const heroPrimary = document.querySelector(".hero .btn:not(.outline)");
+    if(heroPrimary) heroPrimary.querySelector("span") ? (heroPrimary.querySelector("span").textContent = CTA_TEXT[vCta]) : (heroPrimary.textContent = CTA_TEXT[vCta]);
+    document.querySelectorAll('a.btn[href*="forms.gle"]').forEach(a => {
+      const span = a.querySelector("span");
+      if(span) span.textContent = CTA_TEXT[vCta]; else a.textContent = CTA_TEXT[vCta];
+    });
+
+    // Tracking + UTM
+    const variantSignature = `TA_${vTag}|SUB_${vSub}|CTA_${vCta}|DEST_${vDest}`;
+    function track(event, extra = {}){
+      const payload = {
+        event, page: location.pathname,
+        variant_tagline: vTag, variant_subhead: vSub,
+        variant_cta: vCta, variant_dest: vDest, variant_sig: variantSignature,
+        ...extra
+      };
+      try{ console.log("[BossmanTrack]", payload); }catch(e){}
+      try{ window.dataLayer = window.dataLayer || []; window.dataLayer.push(payload); }catch(e){}
+    }
+    function tagUrlString(href){
+      try{
+        const url = new URL(href, location.origin);
+        url.searchParams.set("variant", variantSignature);
+        const hasUtm = [...url.searchParams.keys()].some(k=>k.startsWith("utm_"));
+        if(!hasUtm){
+          url.searchParams.set("utm_source","site");
+          url.searchParams.set("utm_medium","cta");
+          url.searchParams.set("utm_campaign","bossman_launch");
+          url.searchParams.set("utm_content",variantSignature);
+        }
+        return url.toString();
+      }catch(e){ return href; }
+    }
+    function tagElHref(el){ if(el && el.href) el.href = tagUrlString(el.href); }
+
+    const ctas = [
+      ...document.querySelectorAll('a.btn[href*="forms.gle"], a.btn[href*="calendly.com"], a.btn[href="#apply"], a.btn[href="#faq"]')
+    ];
+    ctas.forEach(tagElHref);
+
+    // Destination test (Hero Primary)
+    if(heroPrimary){
+      const chosenHref = (vDest==="D1") ? FORM_URL : APPLY_ANCHOR;
+      if(chosenHref===APPLY_ANCHOR){ heroPrimary.setAttribute("href", APPLY_ANCHOR); }
+      else { heroPrimary.setAttribute("href", tagUrlString(FORM_URL)); }
+      heroPrimary.addEventListener("click",(e)=>{
+        const destLabel = (vDest==="D1") ? "Direct Form" : "Scroll to Apply";
+        track("cta_click",{label:`Hero Primary (${destLabel})`, href: heroPrimary.href || chosenHref});
+      },{passive:true});
+    }
+
+    // Other CTAs click tracking
+    ctas.forEach((a)=>{
+      let label = a.textContent.trim();
+      if(a.href.includes("forms.gle")) label = (CTA_TEXT[vCta] || "Assessment")+" (Assessment)";
+      else if(a.href.includes("calendly.com")) label = "Book 10-min Call";
+      else if(a.getAttribute("href")==="#apply") label = "Apply (Anchor)";
+      else if(a.getAttribute("href")==="#faq") label = "Questions (FAQ)";
+      a.addEventListener("click",()=>track("cta_click",{label, href:a.href || ""}),{passive:true});
+    });
+
+    // Sticky bar button tracking
+    const stickyBtn = document.querySelector(".sticky-cta .btn");
+    if(stickyBtn){
+      stickyBtn.href = tagUrlString(stickyBtn.href || FORM_URL);
+      stickyBtn.addEventListener("click",()=>track("cta_click",{label:"Sticky Start", href:stickyBtn.href || ""}),{passive:true});
+    }
+
+    track("page_view");
+  })();
+  </script>
+
+  <!-- Console Analytics (bossmanReport / bossmanExportCSV / bossmanReset) -->
+  <script>
+  (() => {
+    const LS_KEY = "bossman_stats_v1";
+    const MAX_EVENTS = 2000;
+
+    const load = () => { try{return JSON.parse(localStorage.getItem(LS_KEY)||"[]");}catch(e){return [];} };
+    const save = (arr) => {
+      try{ if(arr.length>MAX_EVENTS) arr = arr.slice(arr.length-MAX_EVENTS);
+           localStorage.setItem(LS_KEY, JSON.stringify(arr)); }catch(e){}
+    };
+
+    function classify(evt){
+      const label = (evt.label||"").toLowerCase();
+      const href  = (evt.href ||"").toLowerCase();
+      if(label.includes("assessment") || href.includes("forms.gle")) return "Assessment";
+      if(href.includes("calendly.com")) return "Calendly";
+      if(label.includes("apply (anchor)") || evt.href === "#apply") return "Apply";
+      if(label.includes("hero primary")) return evt.label.includes("Direct Form") ? "Hero-Direct-Form" : "Hero-Scroll";
+      if(label.includes("sticky start")) return "Sticky-Start";
+      if(label.includes("questions") || evt.href === "#faq") return "FAQ";
+      return "Other";
+    }
+
+    function record(payload){
+      const events = load();
+      const entry = {
+        ts: Date.now(),
+        event: payload.event || "unknown",
+        variant_sig: payload.variant_sig || [
+          "TA_"+(payload.variant_tagline||"?"),
+          "SUB_"+(payload.variant_subhead||"?"),
+          "CTA_"+(payload.variant_cta||"?"),
+          "DEST_"+(payload.variant_dest||"?")
+        ].join("|"),
+        label: payload.label || "",
+        href: payload.href || "",
+        bucket: payload.event==="cta_click" ? classify(payload) : "PageView"
+      };
+      events.push(entry); save(events);
+    }
+
+    (function hookDataLayer(){
+      const dl = window.dataLayer = window.dataLayer || [];
+      const origPush = dl.push ? dl.push.bind(dl) : null;
+      dl.push = function(ev){
+        try{ if(ev && (ev.event==="page_view" || ev.event==="cta_click")) record(ev); }catch(e){}
+        return origPush ? origPush(ev) : Array.prototype.push.call(dl, ev);
+      };
+    })();
+
+    function aggregate(){
+      const rows = load(); const byVar = {};
+      for(const r of rows){
+        const k = r.variant_sig || "unknown";
+        if(!byVar[k]) byVar[k] = {variant:k, visits:0, clicks:0, Assessment:0, Calendly:0, Apply:0, FAQ:0, "Hero-Direct-Form":0, "Hero-Scroll":0, "Sticky-Start":0, Other:0};
+        if(r.event==="page_view") byVar[k].visits += 1;
+        if(r.event==="cta_click"){ byVar[k].clicks += 1; if(byVar[k][r.bucket]!=null) byVar[k][r.bucket] += 1; else byVar[k].Other += 1; }
+      }
+      const table = Object.values(byVar).map(v=>{
+        const vis = Math.max(v.visits,1);
+        return {Variant:v.variant, Visits:v.visits, Clicks:v.clicks, "CTR %":((v.clicks/vis)*100).toFixed(1),
+                Assess:v.Assessment, Calendly:v.Calendly, Apply:v.Apply, "Hero-Form":v["Hero-Direct-Form"], "Hero-Scroll":v["Hero-Scroll"], "Sticky":v["Sticky-Start"], FAQ:v.FAQ};
+      });
+      return {table, raw: rows};
+    }
+
+    function bossmanReport(){
+      const {table} = aggregate();
+      if(!table.length){ console.info("No data yet. Click some CTAs."); return; }
+      console.table(table);
+      console.log("Tip: Call bossmanExportCSV() to download the raw events.");
+    }
+
+    function bossmanExportCSV(){
+      const {raw} = aggregate();
+      if(!raw.length){ console.info("No data to export."); return; }
+      const headers = ["ts","event","variant_sig","label","href","bucket"];
+      const lines = [headers.join(",")].concat(
+        raw.map(r => headers.map(h => `"${(r[h]??"").toString().replace(/"/g,'""')}"`).join(","))
+      );
+      const csv = lines.join("\n");
+      const blob = new Blob([csv], {type:"text/csv"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = "bossman-events.csv";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url), 1000);
+    }
+
+    function bossmanReset(){ localStorage.removeItem(LS_KEY); console.log("Bossman analytics cleared."); }
+
+    window.bossmanReport = bossmanReport;
+    window.bossmanExportCSV = bossmanExportCSV;
+    window.bossmanReset = bossmanReset;
+
+    console.log("%cBossman Console Analytics ready. Run bossmanReport().","background:#D4AF37;color:#111;padding:2px 6px;border-radius:4px;");
+  })();
+  </script>
+
+  <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
