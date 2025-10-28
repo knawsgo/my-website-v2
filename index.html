@@ -3,257 +3,186 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bossman System – Command Your Body. Command Your Life.</title>
+  <title>Bossman System — Command Your Body. Command Your Life.</title>
 
-  <!-- Meta / OG -->
-  <meta name="description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence.">
+  <!-- META / OG -->
+  <meta name="description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence." />
   <meta property="og:title" content="Bossman System" />
   <meta property="og:description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" />
+  <meta property="og:image" content="./assets/bsm-seal.png" />
   <meta name="theme-color" content="#0B0B0B" />
 
-  <!-- Favicon / Touch (using your Imgur asset) -->
-  <link rel="icon" href="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand">
-  <link rel="apple-touch-icon" href="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand">
+  <!-- ICONS -->
+  <link rel="icon" href="./assets/bsm-seal.png" />
+  <link rel="apple-touch-icon" href="./assets/bsm-seal.png" />
 
-  <!-- Fonts -->
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg:#0A0A0A;           /* Deeper black */
-      --bg-2:#0F0F0F;         /* Panels */
-      --fg:#F5F5F5;           /* Off-white */
-      --muted:#CFCFCF;
-      --line:#1E1E1E;         /* Hairline separators */
-      --gold:#D4AF37;         /* Metallic gold */
-      --gold-2:#B8901F;       /* Deeper gold */
-      --gold-3:#F2D36A;       /* Lighter gold for gradients */
-      --max:1140px;
-      --radius:16px;
-      --radius-sm:12px;
+      --bg:#0A0A0A; --bg-2:#0F0F0F; --fg:#F5F5F5; --muted:#CFCFCF; --line:#1E1E1E;
+      --gold:#D4AF37; --gold-2:#B8901F; --gold-3:#F2D36A;
+      --max:1140px; --radius:16px; --radius-sm:12px; --blur:10px;
       --shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03);
-      --blur:10px;
     }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
-
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
     body{
       margin:0; background:var(--bg); color:var(--fg);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
-      /* global subtle noise to feel premium (embedded SVG) */
       background-image:
         radial-gradient(1200px 600px at 60% -10%, rgba(212,175,55,.08), transparent 55%),
         radial-gradient(900px 500px at -10% 20%, rgba(212,175,55,.06), transparent 60%),
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .03 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
       background-size:auto, auto, 140px 140px;
     }
-
     a{color:var(--fg); text-decoration:none}
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-      outline: 2px solid var(--gold); outline-offset: 2px;
-      box-shadow: 0 0 0 3px rgba(212,175,55,.25);
-      border-radius: 10px;
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+      outline:2px solid var(--gold); outline-offset:2px; box-shadow:0 0 0 3px rgba(212,175,55,.25); border-radius:10px;
     }
-
     .container{max-width:var(--max); margin-inline:auto; padding:28px 20px}
-
-    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:14px 24px; border-radius:999px; font-weight:700; letter-spacing:.2px;
-      color:#131313; transition:transform .08s ease, opacity .2s, box-shadow .2s;
-      background:linear-gradient(180deg, var(--gold-3), var(--gold));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 6px 18px rgba(212,175,55,.28);
+      padding:14px 24px; border-radius:999px; font-weight:700; letter-spacing:.2px; color:#111;
+      background:linear-gradient(180deg,var(--gold-3),var(--gold)); box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 6px 18px rgba(212,175,55,.28);
+      transition:transform .08s ease, opacity .2s, box-shadow .2s;
     }
     .btn:hover{transform:translateY(-1px); opacity:.98}
     .btn:active{transform:translateY(0)}
-    .btn svg{width:18px; height:18px; fill:#1a1a1a}
-    .btn.outline{
-      background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.16);
-      box-shadow:none;
-    }
+    .btn.outline{background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.16); box-shadow:none}
     .btn.outline:hover{border-color:rgba(255,255,255,.28)}
-
-    /* Pill */
     .pill{
       display:inline-flex; gap:8px; align-items:center; font-size:.85rem; color:#111;
-      background:linear-gradient(180deg, var(--gold-3), var(--gold));
-      padding:6px 12px; border-radius:999px; font-weight:700;
+      background:linear-gradient(180deg,var(--gold-3),var(--gold)); padding:6px 12px; border-radius:999px; font-weight:700;
       box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 6px 18px rgba(212,175,55,.18);
     }
-
-    /* Nav */
-    header.nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(140%) blur(var(--blur));
-      background:rgba(10,10,10,.65); border-bottom:1px solid rgba(255,255,255,.06);
-    }
+    header.nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(var(--blur)); background:rgba(10,10,10,.65); border-bottom:1px solid rgba(255,255,255,.06)}
     .nav-row{display:flex; align-items:center; justify-content:space-between}
     .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px; font-family:Montserrat,Inter,sans-serif}
-    .brand-logo{
-      width:42px; height:42px; border-radius:10px; object-fit:contain; display:inline-block; background:transparent;
-      box-shadow:0 0 0 1px rgba(212,175,55,.28), 0 8px 18px rgba(0,0,0,.35);
-    }
+    .brand-logo{width:42px; height:42px; border-radius:10px; object-fit:cover; display:inline-block; box-shadow:0 0 0 1px rgba(212,175,55,.28), 0 8px 18px rgba(0,0,0,.35)}
     nav a{opacity:.9; margin-left:18px; font-weight:600; font-size:.95rem}
     nav a:hover{opacity:1}
-
-    /* Hero */
-    .hero{
-      padding:84px 20px 48px; position:relative; overflow:hidden;
-      border-bottom:1px solid var(--line);
-    }
-    /* Hero luxury layers */
-    .hero::before{
-      /* soft vignette from edges */
-      content:""; position:absolute; inset:-10%;
+    .hero{padding:84px 20px 48px; position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+    .hero::before{content:""; position:absolute; inset:-10%;
       background:radial-gradient(1200px 600px at 70% -10%, rgba(212,175,55,.10), transparent 50%),
-                 radial-gradient(900px 520px at 0% 20%, rgba(212,175,55,.07), transparent 60%);
-      pointer-events:none;
-    }
-    .hero::after{
-      /* ultra subtle diagonal pinstripe overlay for texture */
-      content:""; position:absolute; inset:0;
-      background-image: linear-gradient(135deg, rgba(255,255,255,.04) 0.5px, transparent 0.5px);
-      background-size: 8px 8px; opacity:.15; mix-blend-mode:soft-light; pointer-events:none;
-    }
-
-    .hero h1{
-      position:relative;
-      font-family:Montserrat,Inter,sans-serif; font-weight:800; line-height:1.05;
-      font-size:clamp(2.3rem, 4vw + 1rem, 4.2rem); margin:14px 0 10px;
-      text-shadow:0 2px 24px rgba(212,175,55,.12);
-    }
-    .hero .sub{max-width:780px; opacity:.92; font-size:1.06rem}
+                 radial-gradient(900px 520px at 0% 20%, rgba(212,175,55,.07), transparent 60%);}
+    .hero::after{content:""; position:absolute; inset:0; background-image:linear-gradient(135deg, rgba(255,255,255,.04) 0.5px, transparent 0.5px); background-size:8px 8px; opacity:.15; mix-blend-mode:soft-light}
+    .hero h1{position:relative; font-family:Montserrat,Inter,sans-serif; font-weight:800; line-height:1.05; font-size:clamp(2.3rem, 4vw + 1rem, 4.2rem); margin:14px 0 10px; text-shadow:0 2px 24px rgba(212,175,55,.12)}
+    .accent{color:var(--gold)}
+    .sub{max-width:780px; opacity:.92; font-size:1.06rem}
     .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .hero-card{
-      margin-top:26px; background:rgba(18,18,18,.8);
-      border-radius:var(--radius); padding:16px; display:flex; gap:18px; align-items:center; flex-wrap:wrap;
-      border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow);
-    }
+    .hero-card{margin-top:26px; background:rgba(18,18,18,.8); border-radius:var(--radius); padding:16px; display:flex; gap:18px; align-items:center; flex-wrap:wrap; border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
 
-    /* Section scaffold */
     .section{padding:42px 0; position:relative}
     .section + .section{border-top:1px solid var(--line)}
-    h2{
-      font-family:Montserrat,Inter,sans-serif; font-size:clamp(1.6rem, 1vw + 1rem, 2.2rem); margin:0 0 16px;
-      display:inline-block; position:relative;
-    }
-    /* gold underline */
-    h2::after{
-      content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
-      background:linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity:.75;
-    }
+    h2{font-family:Montserrat,Inter,sans-serif; font-size:clamp(1.6rem, 1vw + 1rem, 2.2rem); margin:0 0 16px; display:inline-block; position:relative}
+    h2::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:linear-gradient(90deg, transparent, var(--gold), transparent); opacity:.75}
     .muted{color:var(--muted)}
-    .accent{color:var(--gold)}
-
-    /* Cards grid */
     .cards{display:grid; grid-template-columns:1fr; gap:16px}
     @media (min-width:720px){ .cards{grid-template-columns:repeat(3,1fr)} }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.006));
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-      padding:20px;
-    }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.006)); border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); padding:20px}
     .card h3{margin:6px 0 8px; font-family:Montserrat,Inter,sans-serif}
-    .check{color:var(--gold); margin-right:8px}
-
-    /* Pricing embellish */
     .price{display:flex; align-items:flex-end; gap:8px; margin:6px 0 12px}
-    .price .big{font-family:Montserrat,Inter,sans-serif; font-size:2.25rem; font-weight:800; letter-spacing:.2px}
-    .badge{
-      border:1px solid rgba(255,255,255,.18); padding:4px 10px; border-radius:999px;
-      font-size:.78rem; color:var(--muted); background:rgba(255,255,255,.02);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
-    }
-
-    details{background:rgba(18,18,18,.8); border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow)}
+    .big{font-family:Montserrat,Inter,sans-serif; font-size:2.25rem; font-weight:800; letter-spacing:.2px}
+    .badge{border:1px solid rgba(255,255,255,.18); padding:4px 10px; border-radius:999px; font-size:.78rem; color:var(--muted); background:rgba(255,255,255,.02); box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+    details{background:rgba(18,18,18,.8); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow)}
     details + details{margin-top:12px}
     summary{cursor:pointer; font-weight:600}
-
-    /* Footer */
+    .two{display:grid; gap:16px} @media (min-width:940px){ .two{grid-template-columns:1.15fr .85fr} }
+    .small{font-size:.9rem}
     footer{border-top:1px solid var(--line); padding:30px 20px; color:var(--muted)}
     .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
 
-    /* Utilities */
-    .stack{display:grid; gap:12px}
-    .two{display:grid; gap:16px}
-    @media (min-width:940px){ .two{grid-template-columns:1.15fr .85fr} }
-    .small{font-size:.9rem}
-    .center{text-align:center}
-    .hide{display:none}
-
-    /* Sticky Mobile CTA (luxury bar) */
-    .sticky-cta{
-      position:fixed; left:16px; right:16px; bottom:16px; z-index:60;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:10px 12px; border-radius:999px;
-      background:rgba(13,13,13,.75); backdrop-filter: blur(var(--blur));
-      border:1px solid rgba(255,255,255,.1); box-shadow: 0 12px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+    /* Sticky Instant-Join Bar */
+    .sticky-join{
+      position:fixed; left:16px; right:16px; bottom:16px; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:10px 12px; border-radius:999px; background:rgba(13,13,13,.85); backdrop-filter: blur(var(--blur));
+      border:1px solid rgba(255,255,255,.1); box-shadow:0 12px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06)
     }
-    .sticky-cta .meta{
-      display:flex; align-items:center; gap:10px; font-weight:700;
-      color:var(--fg);
-    }
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      background:radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold));
-      box-shadow:0 0 12px rgba(212,175,55,.6);
-    }
-    .sticky-cta .btn{padding:10px 16px}
-    /* Show on small screens only */
-    @media (min-width:860px){ .sticky-cta{display:none} }
+    .sticky-join .meta{display:flex; align-items:center; gap:10px; font-weight:700}
+    .dot{width:10px; height:10px; border-radius:50%; background:radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold)); box-shadow:0 0 12px rgba(212,175,55,.6)}
+    .sticky-join .btn{padding:10px 16px}
+    .sticky-close{background:transparent; border:0; color:var(--muted); font-weight:700; cursor:pointer}
+    @media (min-width:920px){ .sticky-join{left:24px; right:auto; bottom:24px; width:max-content} }
   </style>
 </head>
 <body>
-  <!-- Nav -->
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav-row">
       <a class="brand" href="#top" aria-label="Brand Home">
-        <img class="brand-logo" src="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" alt="Bossman System logo">
+        <img class="brand-logo" src="./assets/bsm-seal.png" alt="Bossman System logo">
         <span>Bossman System</span>
       </a>
       <nav aria-label="Main">
-        <a href="#program">Program</a>
-        <a href="#proof">Proof</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#pricing">Pricing</a>
-        <a href="#apply" class="btn" style="padding:8px 14px">Apply</a>
+        <a href="#apply" class="btn" style="padding:8px 14px">Join The House</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <main id="top" class="hero container">
-    <img src="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" alt="Bossman System" style="height:68px;margin-bottom:14px;border-radius:12px;display:block;">
-    <span class="pill">Built for single & divorced dads</span>
+    <img src="./assets/bsm-seal.png" alt="Bossman System" style="height:72px;margin-bottom:14px;border-radius:12px;display:block;">
+    <span class="pill">House of Bossman</span>
     <h1><span class="accent">Command Your Body.</span> Command Your Life.</h1>
     <p class="sub">12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and feel attractive again—while showing up stronger for your kids.</p>
-    <div class="cta-row" role="group" aria-label="Primary actions">
-      <a class="btn" href="#apply">
-        <!-- arrow icon -->
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
-        <span>Start Your Assessment</span>
-      </a>
-      <a class="btn outline" href="#proof" aria-label="See client wins">See Client Wins</a>
+    <div class="cta-row">
+      <a class="btn" href="#apply">Start Your Assessment</a>
+      <a class="btn outline" href="#pricing" aria-label="See pricing options">Join The House</a>
     </div>
-    <div class="hero-card" aria-live="polite">
+    <div class="hero-card">
       <div>✔️ Weekly 1:1 accountability</div>
       <div>✔️ Gym or home training</div>
       <div>✔️ Nutrition that fits custody life</div>
     </div>
   </main>
 
-  <!-- Social Proof -->
-  <section id="proof" class="section container">
+  <!-- ABOUT -->
+  <section id="about" class="section container two">
+    <div>
+      <h2>About The House</h2>
+      <p class="muted">Discipline over drama. Simplicity over gimmicks. We build men who lead by example—starting with their health, energy, and presence.</p>
+      <div class="cards" style="grid-template-columns:1fr; gap:12px">
+        <div class="card"><h3>Mission</h3><p>Rebuild single & divorced dads into confident leaders—strong body, clear mind, stable habits.</p></div>
+        <div class="card"><h3>Method</h3><p>Customized training, macro targets, weekly accountability. Real life scheduling, no fluff.</p></div>
+        <div class="card"><h3>Motto</h3><p><em>Established per Disciplin MMXXV.</em></p></div>
+      </div>
+    </div>
+    <aside class="card">
+      <h3>Guarantee</h3>
+      <p>Don’t see visible results in 12 weeks? I’ll coach you for free until you do. Zero risk.</p>
+      <a class="btn" href="#apply">Apply Now</a>
+    </aside>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs" class="section container">
+    <h2>Programs</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Custom Training</h3>
+        <p>3–4 days/week. Gym or home. Progressive plan matched to equipment, joints, and schedule.</p>
+      </article>
+      <article class="card">
+        <h3>Nutrition Blueprint</h3>
+        <p>Calories & macros. Plug-and-play meals that work with custody life—no crash diets.</p>
+      </article>
+      <article class="card">
+        <h3>Accountability</h3>
+        <p>Weekly check-ins, form reviews, and messaging so you never fall off.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section container">
     <h2>Wins from Dads Like You</h2>
     <p class="muted">Real transformations. Real confidence.</p>
     <div class="cards" role="list">
@@ -278,44 +207,17 @@
     </div>
   </section>
 
-  <!-- Program -->
-  <section id="program" class="section container two">
-    <div>
-      <h2>The Bossman System</h2>
-      <p class="muted">A simple system tailored to your reality: work, kids, stress, and limited time.</p>
-      <div class="stack">
-        <div class="card">
-          <h3><span class="check">▣</span>Custom Training</h3>
-          <p>3–4 days/week. Gym or home. Progressive plan that fits your schedule and equipment.</p>
-        </div>
-        <div class="card">
-          <h3><span class="check">▣</span>Nutrition Blueprint</h3>
-          <p>Calories & macros with plug-and-play meals that work with custody life—no crash diets.</p>
-        </div>
-        <div class="card">
-          <h3><span class="check">▣</span>Accountability</h3>
-          <p>Weekly 1:1 check-ins, form reviews, and messaging support so you never fall off.</p>
-        </div>
-      </div>
-    </div>
-    <aside aria-label="Guarantee" class="card">
-      <h3>My Guarantee</h3>
-      <p>Don’t see visible results in 12 weeks? I’ll coach you for free until you do. Zero risk.</p>
-      <a class="btn" href="#apply">Apply Now</a>
-    </aside>
-  </section>
-
-  <!-- Pricing -->
+  <!-- PRICING / PAYMENTS -->
   <section id="pricing" class="section container">
-    <h2>Simple Pricing</h2>
-    <p class="muted">Premium 1:1 coaching for 12 weeks. Payment plans available.</p>
+    <h2>Join The House</h2>
+    <p class="muted">Choose your path — discipline is the entry fee.</p>
+
     <div class="cards">
+      <!-- 12-Week Program -->
       <article class="card">
         <span class="badge">Most Popular</span>
-        <h3>Bossman System – 12 Weeks</h3>
-        <div class="price">
-          <span class="big">$1,500</span><span class="muted">one-time</span>
-        </div>
+        <h3>Bossman System — 12 Weeks</h3>
+        <div class="price"><span class="big">$1,500</span><span class="muted">one-time</span></div>
         <ul>
           <li>Custom plan + weekly 1:1 calls</li>
           <li>Nutrition targets & templates</li>
@@ -323,53 +225,41 @@
           <li>Form checks & adjustments</li>
         </ul>
         <div class="cta-row">
-          <a class="btn" href="#apply">Apply Now</a>
-          <a class="btn outline" href="#faq">Questions?</a>
+          <!-- EDIT your PayPal username if different -->
+          <a class="btn" href="https://paypal.me/bossmansystem/1500" target="_blank" rel="noopener">💳 Pay with PayPal</a>
+          <a class="btn outline" href="https://cash.app/$maxjulienn" target="_blank" rel="noopener">💵 Cash App $maxjulienn</a>
         </div>
       </article>
+
+      <!-- Payment Plan -->
       <article class="card">
         <span class="badge">Flexible</span>
         <h3>Payment Plan</h3>
-        <div class="price">
-          <span class="big">$600</span><span class="muted">/ mo × 3</span>
+        <div class="price"><span class="big">$600</span><span class="muted">/ mo × 3</span></div>
+        <p class="muted">Same program, split into 3 payments.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://paypal.me/bossmansystem/600" target="_blank" rel="noopener">💳 Pay $600 via PayPal</a>
+          <a class="btn outline" href="https://cash.app/$maxjulienn" target="_blank" rel="noopener">💵 Cash App</a>
         </div>
-        <p class="muted">Same program, spread out payments.</p>
-        <a class="btn" href="#apply">Apply with Payment Plan</a>
       </article>
+
+      <!-- Brotherhood -->
       <article class="card">
-        <span class="badge">Upsell (Optional)</span>
-        <h3>Bossman Brotherhood Add-On</h3>
-        <div class="price">
-          <span class="big">$150</span><span class="muted">/ mo</span>
-        </div>
+        <span class="badge">Exclusive</span>
+        <h3>Bossman Brotherhood</h3>
+        <div class="price"><span class="big">$150</span><span class="muted">/ mo</span></div>
         <p class="muted">Weekly group call + community accountability.</p>
-        <a class="btn outline" href="#apply">Add to Application</a>
+        <div class="cta-row">
+          <a class="btn" href="https://paypal.me/bossmansystem/150" target="_blank" rel="noopener">💳 Pay with PayPal</a>
+          <a class="btn outline" href="https://cash.app/$maxjulienn" target="_blank" rel="noopener">💵 Cash App</a>
+        </div>
       </article>
     </div>
+
+    <p class="small muted" style="margin-top:18px"><em>Established per Disciplin MMXXV.</em></p>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="section container">
-    <h2>FAQ</h2>
-    <details>
-      <summary>How fast will I see results?</summary>
-      <p>Most dads notice changes in 2–3 weeks; meaningful cuts happen by weeks 6–12 with consistency.</p>
-    </details>
-    <details>
-      <summary>Do I need a gym?</summary>
-      <p>No. I build for whatever you’ve got—gym or home, minimal gear required.</p>
-    </details>
-    <details>
-      <summary>What if I’ve “tried everything”?</summary>
-      <p>You’ve tried tactics. This is a system: training, nutrition, and accountability built for your reality.</p>
-    </details>
-    <details>
-      <summary>What if life gets busy with kids/work?</summary>
-      <p>We design around custody schedules and travel. The plan flexes; the standard doesn’t.</p>
-    </details>
-  </section>
-
-  <!-- Apply -->
+  <!-- APPLY -->
   <section id="apply" class="section container two">
     <div>
       <h2>Start Your Assessment</h2>
@@ -380,17 +270,13 @@
         <li>Get your plan + start week 1</li>
       </ol>
       <div class="cta-row">
-        <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
-          <span>Start Your Assessment</span>
-        </a>
-        <a class="btn outline" href="https://calendly.com/your-handle/10min" target="_blank" rel="noopener">Book 10-min Call</a>
+        <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">Start Your Assessment</a>
+        <a class="btn outline" href="#pricing">Or Join Now</a>
       </div>
       <p class="small muted" style="margin-top:8px">Prefer DM? Message me on IG/TikTok: @max._.julien</p>
     </div>
 
-    <form class="card" aria-label="Quick interest form"
-      action="https://formspree.io/f/xblzzpoa" method="POST">
+    <form class="card" aria-label="Quick interest form" action="https://formspree.io/f/xblzzpoa" method="POST">
       <label class="small muted" for="name">Name</label>
       <input id="name" name="name" required placeholder="Your name"
              style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;">
@@ -404,20 +290,16 @@
                 placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…"
                 style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;"></textarea>
 
-      <!-- Force a copy to your inbox every time -->
-  
-      <!-- Inbox subject line -->
       <input type="hidden" name="_subject" value="New Bossman System lead">
-
-      <button class="btn" type="submit" aria-label="Submit quick interest" style="margin-top:12px;">Submit</button>
+      <button class="btn" type="submit" style="margin-top:12px;">Submit</button>
     </form>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="container">
     <div class="foot">
       <div class="brand">
-        <img class="brand-logo" src="https://i.imgur.com/aftA8ds_d.webp?maxwidth=760&fidelity=grand" alt="Bossman System logo">
+        <img class="brand-logo" src="./assets/bsm-seal.png" alt="Bossman System logo">
         <span class="muted">© <span id="y"></span> Bossman System</span>
       </div>
       <div class="small">
@@ -429,238 +311,52 @@
     </div>
   </footer>
 
-  <!-- Sticky Mobile CTA -->
-  <div class="sticky-cta" role="complementary" aria-label="Quick Apply bar">
-    <div class="meta">
-      <span class="dot" aria-hidden="true"></span>
-      <span>Bossman System</span>
+  <!-- STICKY INSTANT-JOIN BAR -->
+  <div class="sticky-join" id="stickyJoin" role="complementary" aria-label="Instant join bar" style="display:none">
+    <div class="meta"><span class="dot" aria-hidden="true"></span><span>Join The House</span></div>
+    <div style="display:flex; gap:8px; align-items:center">
+      <a class="btn" href="https://paypal.me/bossmansystem/1500" target="_blank" rel="noopener">💳 PayPal</a>
+      <a class="btn outline" href="https://cash.app/$maxjulienn" target="_blank" rel="noopener">💵 Cash App</a>
+      <button class="sticky-close" id="stickyClose" aria-label="Hide">✕</button>
     </div>
-    <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
-      <span>Start</span>
-    </a>
   </div>
 
-  <!-- Multivariate: Tagline + Subheadline + CTA Text + Destination -->
+  <!-- VARIANT / TRACKING (console) -->
   <script>
-  (() => {
-    const TAGLINE = {A:"Command Your Body. Command Your Life.", B:"Discipline. Power. Results."};
-    const SUBHEAD = {
-      A:"12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and feel attractive again—while showing up stronger for your kids.",
-      B:"Drop 10–20 lbs. Build muscle. Lead your family by example—without living in the gym or wrecking your schedule."
-    };
-    const CTA_TEXT = {A:"Start Your Assessment", B:"Start Week 1"};
-    const DESTINATION = {D1:"FORM", D2:"APPLY"};
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-    const FORM_URL = "https://forms.gle/zqNKXEdhWR6UJ5CM9";
-    const APPLY_ANCHOR = "#apply";
-
-    function pickStable(key, variants){
-      const tsKey = key+"_ts";
-      let v = localStorage.getItem(key);
-      let ts = parseInt(localStorage.getItem(tsKey)||"0",10);
-      const expired = Date.now()-ts > 30*24*60*60*1000;
-      if(!v || !(v in variants) || expired){
-        const keys = Object.keys(variants);
-        v = keys[Math.floor(Math.random()*keys.length)];
-        localStorage.setItem(key, v);
-        localStorage.setItem(tsKey, Date.now().toString());
+    // Show sticky join after slight delay; respect dismiss for 24h
+    (function(){
+      const KEY='bsm_sticky_dismiss_ts';
+      const ts = +localStorage.getItem(KEY)||0;
+      const day = 24*60*60*1000;
+      const bar = document.getElementById('stickyJoin');
+      if(Date.now()-ts > day){
+        setTimeout(()=>{ bar.style.display='flex'; }, 1600);
       }
-      return v;
-    }
-
-    const vTag = pickStable("bossman_tagline_variant", TAGLINE);
-    const vSub = pickStable("bossman_subhead_variant", SUBHEAD);
-    const vCta = pickStable("bossman_cta_variant", CTA_TEXT);
-    const vDest = pickStable("bossman_dest_variant", DESTINATION);
-
-    // Apply H1 (accent first phrase if split by ". ")
-    const h1 = document.querySelector(".hero h1");
-    if(h1){
-      const txt = TAGLINE[vTag];
-      const parts = txt.split(". ");
-      h1.innerHTML = parts.length>1
-        ? `<span class="accent">${parts[0]}.</span> ${parts.slice(1).join(". ")}`
-        : txt;
-    }
-    // Subhead
-    const sub = document.querySelector(".hero .sub");
-    if(sub) sub.textContent = SUBHEAD[vSub];
-    // CTA text (hero + form buttons)
-    const heroPrimary = document.querySelector(".hero .btn:not(.outline)");
-    if(heroPrimary) heroPrimary.querySelector("span") ? (heroPrimary.querySelector("span").textContent = CTA_TEXT[vCta]) : (heroPrimary.textContent = CTA_TEXT[vCta]);
-    document.querySelectorAll('a.btn[href*="forms.gle"]').forEach(a => {
-      const span = a.querySelector("span");
-      if(span) span.textContent = CTA_TEXT[vCta]; else a.textContent = CTA_TEXT[vCta];
-    });
-
-    // Tracking + UTM
-    const variantSignature = `TA_${vTag}|SUB_${vSub}|CTA_${vCta}|DEST_${vDest}`;
-    function track(event, extra = {}){
-      const payload = {
-        event, page: location.pathname,
-        variant_tagline: vTag, variant_subhead: vSub,
-        variant_cta: vCta, variant_dest: vDest, variant_sig: variantSignature,
-        ...extra
-      };
-      try{ console.log("[BossmanTrack]", payload); }catch(e){}
-      try{ window.dataLayer = window.dataLayer || []; window.dataLayer.push(payload); }catch(e){}
-    }
-    function tagUrlString(href){
-      try{
-        const url = new URL(href, location.origin);
-        url.searchParams.set("variant", variantSignature);
-        const hasUtm = [...url.searchParams.keys()].some(k=>k.startsWith("utm_"));
-        if(!hasUtm){
-          url.searchParams.set("utm_source","site");
-          url.searchParams.set("utm_medium","cta");
-          url.searchParams.set("utm_campaign","bossman_launch");
-          url.searchParams.set("utm_content",variantSignature);
-        }
-        return url.toString();
-      }catch(e){ return href; }
-    }
-    function tagElHref(el){ if(el && el.href) el.href = tagUrlString(el.href); }
-
-    const ctas = [
-      ...document.querySelectorAll('a.btn[href*="forms.gle"], a.btn[href*="calendly.com"], a.btn[href="#apply"], a.btn[href="#faq"]')
-    ];
-    ctas.forEach(tagElHref);
-
-    // Destination test (Hero Primary)
-    if(heroPrimary){
-      const chosenHref = (vDest==="D1") ? FORM_URL : APPLY_ANCHOR;
-      if(chosenHref===APPLY_ANCHOR){ heroPrimary.setAttribute("href", APPLY_ANCHOR); }
-      else { heroPrimary.setAttribute("href", tagUrlString(FORM_URL)); }
-      heroPrimary.addEventListener("click",(e)=>{
-        const destLabel = (vDest==="D1") ? "Direct Form" : "Scroll to Apply";
-        track("cta_click",{label:`Hero Primary (${destLabel})`, href: heroPrimary.href || chosenHref});
-      },{passive:true});
-    }
-
-    // Other CTAs click tracking
-    ctas.forEach((a)=>{
-      let label = a.textContent.trim();
-      if(a.href.includes("forms.gle")) label = (CTA_TEXT[vCta] || "Assessment")+" (Assessment)";
-      else if(a.href.includes("calendly.com")) label = "Book 10-min Call";
-      else if(a.getAttribute("href")==="#apply") label = "Apply (Anchor)";
-      else if(a.getAttribute("href")==="#faq") label = "Questions (FAQ)";
-      a.addEventListener("click",()=>track("cta_click",{label, href:a.href || ""}),{passive:true});
-    });
-
-    // Sticky bar button tracking
-    const stickyBtn = document.querySelector(".sticky-cta .btn");
-    if(stickyBtn){
-      stickyBtn.href = tagUrlString(stickyBtn.href || FORM_URL);
-      stickyBtn.addEventListener("click",()=>track("cta_click",{label:"Sticky Start", href:stickyBtn.href || ""}),{passive:true});
-    }
-
-    track("page_view");
-  })();
-  </script>
-
-  <!-- Console Analytics (bossmanReport / bossmanExportCSV / bossmanReset) -->
-  <script>
-  (() => {
-    const LS_KEY = "bossman_stats_v1";
-    const MAX_EVENTS = 2000;
-
-    const load = () => { try{return JSON.parse(localStorage.getItem(LS_KEY)||"[]");}catch(e){return [];} };
-    const save = (arr) => {
-      try{ if(arr.length>MAX_EVENTS) arr = arr.slice(arr.length-MAX_EVENTS);
-           localStorage.setItem(LS_KEY, JSON.stringify(arr)); }catch(e){}
-    };
-
-    function classify(evt){
-      const label = (evt.label||"").toLowerCase();
-      const href  = (evt.href ||"").toLowerCase();
-      if(label.includes("assessment") || href.includes("forms.gle")) return "Assessment";
-      if(href.includes("calendly.com")) return "Calendly";
-      if(label.includes("apply (anchor)") || evt.href === "#apply") return "Apply";
-      if(label.includes("hero primary")) return evt.label.includes("Direct Form") ? "Hero-Direct-Form" : "Hero-Scroll";
-      if(label.includes("sticky start")) return "Sticky-Start";
-      if(label.includes("questions") || evt.href === "#faq") return "FAQ";
-      return "Other";
-    }
-
-    function record(payload){
-      const events = load();
-      const entry = {
-        ts: Date.now(),
-        event: payload.event || "unknown",
-        variant_sig: payload.variant_sig || [
-          "TA_"+(payload.variant_tagline||"?"),
-          "SUB_"+(payload.variant_subhead||"?"),
-          "CTA_"+(payload.variant_cta||"?"),
-          "DEST_"+(payload.variant_dest||"?")
-        ].join("|"),
-        label: payload.label || "",
-        href: payload.href || "",
-        bucket: payload.event==="cta_click" ? classify(payload) : "PageView"
-      };
-      events.push(entry); save(events);
-    }
-
-    (function hookDataLayer(){
-      const dl = window.dataLayer = window.dataLayer || [];
-      const origPush = dl.push ? dl.push.bind(dl) : null;
-      dl.push = function(ev){
-        try{ if(ev && (ev.event==="page_view" || ev.event==="cta_click")) record(ev); }catch(e){}
-        return origPush ? origPush(ev) : Array.prototype.push.call(dl, ev);
-      };
+      document.getElementById('stickyClose').addEventListener('click', ()=>{
+        localStorage.setItem(KEY, Date.now().toString());
+        bar.remove();
+      });
     })();
 
-    function aggregate(){
-      const rows = load(); const byVar = {};
-      for(const r of rows){
-        const k = r.variant_sig || "unknown";
-        if(!byVar[k]) byVar[k] = {variant:k, visits:0, clicks:0, Assessment:0, Calendly:0, Apply:0, FAQ:0, "Hero-Direct-Form":0, "Hero-Scroll":0, "Sticky-Start":0, Other:0};
-        if(r.event==="page_view") byVar[k].visits += 1;
-        if(r.event==="cta_click"){ byVar[k].clicks += 1; if(byVar[k][r.bucket]!=null) byVar[k][r.bucket] += 1; else byVar[k].Other += 1; }
+    // Lightweight console analytics (clicks + visits)
+    (()=>{
+      const LS_KEY = "bossman_stats_v1"; const MAX_EVENTS = 2000;
+      const load = () => { try{return JSON.parse(localStorage.getItem(LS_KEY)||"[]");}catch(e){return [];} };
+      const save = (arr) => { try{ if(arr.length>MAX_EVENTS) arr = arr.slice(arr.length-MAX_EVENTS); localStorage.setItem(LS_KEY, JSON.stringify(arr)); }catch(e){} };
+      function record(ev,label,href,bucket){ const events = load(); events.push({ts:Date.now(),event:ev,label,href,bucket}); save(events); }
+      function tagAll(){
+        document.querySelectorAll('a.btn').forEach(a=>{
+          a.addEventListener('click',()=>record('cta_click', a.textContent.trim(), a.href||'', 'btn'),{passive:true});
+        });
       }
-      const table = Object.values(byVar).map(v=>{
-        const vis = Math.max(v.visits,1);
-        return {Variant:v.variant, Visits:v.visits, Clicks:v.clicks, "CTR %":((v.clicks/vis)*100).toFixed(1),
-                Assess:v.Assessment, Calendly:v.Calendly, Apply:v.Apply, "Hero-Form":v["Hero-Direct-Form"], "Hero-Scroll":v["Hero-Scroll"], "Sticky":v["Sticky-Start"], FAQ:v.FAQ};
-      });
-      return {table, raw: rows};
-    }
-
-    function bossmanReport(){
-      const {table} = aggregate();
-      if(!table.length){ console.info("No data yet. Click some CTAs."); return; }
-      console.table(table);
-      console.log("Tip: Call bossmanExportCSV() to download the raw events.");
-    }
-
-    function bossmanExportCSV(){
-      const {raw} = aggregate();
-      if(!raw.length){ console.info("No data to export."); return; }
-      const headers = ["ts","event","variant_sig","label","href","bucket"];
-      const lines = [headers.join(",")].concat(
-        raw.map(r => headers.map(h => `"${(r[h]??"").toString().replace(/"/g,'""')}"`).join(","))
-      );
-      const csv = lines.join("\n");
-      const blob = new Blob([csv], {type:"text/csv"});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url; a.download = "bossman-events.csv";
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(()=>URL.revokeObjectURL(url), 1000);
-    }
-
-    function bossmanReset(){ localStorage.removeItem(LS_KEY); console.log("Bossman analytics cleared."); }
-
-    window.bossmanReport = bossmanReport;
-    window.bossmanExportCSV = bossmanExportCSV;
-    window.bossmanReset = bossmanReset;
-
-    console.log("%cBossman Console Analytics ready. Run bossmanReport().","background:#D4AF37;color:#111;padding:2px 6px;border-radius:4px;");
-  })();
-  </script>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+      tagAll(); record('page_view','visit',location.pathname,'view');
+      window.bossmanReport = function(){ console.table(load()); };
+      window.bossmanReset = function(){ localStorage.removeItem(LS_KEY); console.log('Bossman analytics cleared.'); };
+      console.log("%cBossman Console Analytics ready. Run bossmanReport().","background:#D4AF37;color:#111;padding:2px 6px;border-radius:4px;");
+    })();
   </script>
 </body>
 </html>
