@@ -1,454 +1,156 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bossman System — Command Your Body. Command Your Life.</title>
+  <title>Bossman System – Command Your Body. Command Your Life.</title>
 
   <!-- Meta / OG -->
-  <meta name="description"
-    content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence." />
+  <meta name="description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence.">
   <meta property="og:title" content="Bossman System" />
-  <meta property="og:description"
-    content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence." />
+  <meta property="og:description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/bsm-seal.png" />
+  <meta property="og:image" content="assets/bsm-seal.png" />
   <meta name="theme-color" content="#0B0B0B" />
 
-  <!-- Icons -->
-  <link rel="icon" href="./assets/bsm-seal.png" />
-  <link rel="apple-touch-icon" href="./assets/bsm-seal.png" />
+  <!-- Favicon / Touch -->
+  <link rel="icon" type="image/png" href="assets/bossman-favicon.png">
+  <link rel="apple-touch-icon" href="assets/bossman-favicon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --bg: #0A0A0A;
-      --bg2: #0F0F0F;
-      --fg: #F5F5F5;
-      --muted: #CFCFCF;
-      --line: #1E1E1E;
-      --gold: #D4AF37;
-      --gold-2: #B8901F;
-      --gold-3: #F2D36A;
-      --max: 1140px;
-      --radius: 16px;
-      --radius-sm: 12px;
-      --blur: 10px;
-      --shadow: 0 10px 30px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .03);
+    :root{
+      --bg:#0A0A0A; --bg-2:#0F0F0F; --fg:#F5F5F5; --muted:#CFCFCF; --line:#1E1E1E;
+      --gold:#D4AF37; --gold-2:#B8901F; --gold-3:#F2D36A;
+      --max:1140px; --radius:16px; --radius-sm:12px; --shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03);
+      --blur:10px;
     }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
       background-image:
-        radial-gradient(1200px 600px at 60% -10%, rgba(212, 175, 55, .08), transparent 55%),
-        radial-gradient(900px 500px at -10% 20%, rgba(212, 175, 55, .06), transparent 60%),
+        radial-gradient(1200px 600px at 60% -10%, rgba(212,175,55,.08), transparent 55%),
+        radial-gradient(900px 500px at -10% 20%, rgba(212,175,55,.06), transparent 60%),
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .03 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-      background-size: auto, auto, 140px 140px;
+      background-size:auto, auto, 140px 140px;
     }
+    a{color:var(--fg); text-decoration:none}
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold); outline-offset: 2px; box-shadow: 0 0 0 3px rgba(212,175,55,.25); border-radius: 10px;
+    }
+    .container{max-width:var(--max); margin-inline:auto; padding:28px 20px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 24px; border-radius:999px; font-weight:700; letter-spacing:.2px; color:#131313;
+      transition:transform .08s ease, opacity .2s, box-shadow .2s;
+      background:linear-gradient(180deg, var(--gold-3), var(--gold));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 6px 18px rgba(212,175,55,.28);
+    }
+    .btn:hover{transform:translateY(-1px); opacity:.98}
+    .btn:active{transform:translateY(0)}
+    .btn.outline{background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.16); box-shadow:none}
+    .btn.outline:hover{border-color:rgba(255,255,255,.28)}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center; font-size:.85rem; color:#111;
+      background:linear-gradient(180deg, var(--gold-3), var(--gold));
+      padding:6px 12px; border-radius:999px; font-weight:700;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 6px 18px rgba(212,175,55,.18);
+    }
+    header.nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(var(--blur));
+      background:rgba(10,10,10,.65); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-row{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px; font-family:Montserrat,Inter,sans-serif}
+    .brand-logo{width:42px; height:42px; border-radius:10px; object-fit:cover; display:inline-block; background:transparent;
+      box-shadow:0 0 0 1px rgba(212,175,55,.28), 0 8px 18px rgba(0,0,0,.35)}
+    nav a{opacity:.9; margin-left:18px; font-weight:600; font-size:.95rem}
+    nav a:hover{opacity:1}
 
-    a {
-      color: var(--fg);
-      text-decoration: none
+    .hero{padding:84px 20px 48px; position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+    .hero::before{content:""; position:absolute; inset:-10%;
+      background:radial-gradient(1200px 600px at 70% -10%, rgba(212,175,55,.10), transparent 50%),
+                 radial-gradient(900px 520px at 0% 20%, rgba(212,175,55,.07), transparent 60%);}
+    .hero::after{content:""; position:absolute; inset:0;
+      background-image: linear-gradient(135deg, rgba(255,255,255,.04) 0.5px, transparent 0.5px);
+      background-size: 8px 8px; opacity:.15; mix-blend-mode:soft-light;}
+    .hero h1{
+      position:relative; font-family:Montserrat,Inter,sans-serif; font-weight:800; line-height:1.05;
+      font-size:clamp(2.3rem, 4vw + 1rem, 4.2rem); margin:14px 0 10px; text-shadow:0 2px 24px rgba(212,175,55,.12);
     }
+    .hero .sub{max-width:780px; opacity:.92; font-size:1.06rem}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .hero-card{margin-top:26px; background:rgba(18,18,18,.8); border-radius:var(--radius); padding:16px;
+      display:flex; gap:18px; align-items:center; flex-wrap:wrap; border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
 
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, .25);
-      border-radius: 10px;
-    }
+    .section{padding:42px 0; position:relative}
+    .section + .section{border-top:1px solid var(--line)}
+    h2{font-family:Montserrat,Inter,sans-serif; font-size:clamp(1.6rem, 1vw + 1rem, 2.2rem); margin:0 0 16px; display:inline-block; position:relative}
+    h2::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent); opacity:.75}
+    .muted{color:var(--muted)} .accent{color:var(--gold)}
 
-    .container {
-      max-width: var(--max);
-      margin-inline: auto;
-      padding: 28px 20px
-    }
+    .cards{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:720px){ .cards{grid-template-columns:repeat(3,1fr)} }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.006));
+      border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); padding:20px}
+    .card h3{margin:6px 0 8px; font-family:Montserrat,Inter,sans-serif}
+    .check{color:var(--gold); margin-right:8px}
 
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      color: #111;
-      background: linear-gradient(180deg, var(--gold-3), var(--gold));
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 6px 18px rgba(212, 175, 55, .28);
-      transition: transform .08s ease, opacity .2s, box-shadow .2s;
-    }
+    .price{display:flex; align-items:flex-end; gap:8px; margin:6px 0 12px}
+    .big{font-family:Montserrat,Inter,sans-serif; font-size:2.25rem; font-weight:800; letter-spacing:.2px}
+    .badge{border:1px solid rgba(255,255,255,.18); padding:4px 10px; border-radius:999px; font-size:.78rem;
+      color:var(--muted); background:rgba(255,255,255,.02); box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
 
-    .btn:hover {
-      transform: translateY(-1px);
-      opacity: .98
-    }
+    details{background:rgba(18,18,18,.8); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius-sm); padding:14px 16px; box-shadow:var(--shadow)}
+    details + details{margin-top:12px}
+    summary{cursor:pointer; font-weight:600}
 
-    .btn:active {
-      transform: translateY(0)
-    }
+    footer{border-top:1px solid var(--line); padding:30px 20px; color:var(--muted)}
+    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+    .stack{display:grid; gap:12px}
+    .two{display:grid; gap:16px}
+    @media (min-width:940px){ .two{grid-template-columns:1.15fr .85fr} }
 
-    .btn svg {
-      width: 18px;
-      height: 18px;
-      fill: #1a1a1a
+    /* Sticky Mobile CTA (luxury bar) */
+    .sticky-cta{
+      position:fixed; left:16px; right:16px; bottom:16px; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:10px 12px; border-radius:999px; background:rgba(13,13,13,.75); backdrop-filter: blur(var(--blur));
+      border:1px solid rgba(255,255,255,.1); box-shadow: 0 12px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
     }
+    .sticky-cta .meta{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--fg)}
+    .dot{width:10px; height:10px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold)); box-shadow:0 0 12px rgba(212,175,55,.6)}
+    .sticky-cta .btn{padding:10px 16px}
+    @media (min-width:860px){ .sticky-cta{display:none} }
 
-    .btn.outline {
-      background: transparent;
-      color: var(--fg);
-      border: 1px solid rgba(255, 255, 255, .16);
-      box-shadow: none
+    /* Quick Pay Tray */
+    .paytray{
+      position:sticky; bottom:0; z-index:40; margin-top:28px; border:1px solid rgba(255,255,255,.10);
+      background:rgba(14,14,14,.6); backdrop-filter: blur(10px); border-radius:999px; padding:10px; display:flex; gap:10px; align-items:center;
+      box-shadow:0 12px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
     }
-
-    .btn.outline:hover {
-      border-color: rgba(255, 255, 255, .28)
-    }
-
-    .pill {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      font-size: .85rem;
-      color: #111;
-      background: linear-gradient(180deg, var(--gold-3), var(--gold));
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-weight: 700;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 6px 18px rgba(212, 175, 55, .18);
-    }
-
-    /* Nav */
-    header.nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: saturate(140%) blur(var(--blur));
-      background: rgba(10, 10, 10, .65);
-      border-bottom: 1px solid rgba(255, 255, 255, .06)
-    }
-
-    .nav-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: .3px;
-      font-family: Montserrat, Inter, sans-serif
-    }
-
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      object-fit: cover;
-      display: inline-block;
-      box-shadow: 0 0 0 1px rgba(212, 175, 55, .28), 0 8px 18px rgba(0, 0, 0, .35)
-    }
-
-    nav a {
-      opacity: .9;
-      margin-left: 18px;
-      font-weight: 600;
-      font-size: .95rem
-    }
-
-    nav a:hover {
-      opacity: 1
-    }
-
-    /* Hero */
-    .hero {
-      padding: 84px 20px 48px;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--line)
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -10%;
-      background:
-        radial-gradient(1200px 600px at 70% -10%, rgba(212, 175, 55, .10), transparent 50%),
-        radial-gradient(900px 520px at 0% 20%, rgba(212, 175, 55, .07), transparent 60%);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(135deg, rgba(255, 255, 255, .04) 0.5px, transparent 0.5px);
-      background-size: 8px 8px;
-      opacity: .15;
-      mix-blend-mode: soft-light
-    }
-
-    .hero h1 {
-      position: relative;
-      font-family: Montserrat, Inter, sans-serif;
-      font-weight: 800;
-      line-height: 1.05;
-      font-size: clamp(2.3rem, 4vw + 1rem, 4.2rem);
-      margin: 14px 0 10px;
-      text-shadow: 0 2px 24px rgba(212, 175, 55, .12)
-    }
-
-    .hero .sub {
-      max-width: 780px;
-      opacity: .92;
-      font-size: 1.06rem
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px
-    }
-
-    .hero-card {
-      margin-top: 26px;
-      background: rgba(18, 18, 18, .8);
-      border-radius: var(--radius);
-      padding: 16px;
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-      border: 1px solid rgba(255, 255, 255, .08);
-      box-shadow: var(--shadow)
-    }
-
-    .accent {
-      color: var(--gold)
-    }
-
-    /* Sections */
-    .section {
-      padding: 42px 0;
-      position: relative
-    }
-
-    .section+.section {
-      border-top: 1px solid var(--line)
-    }
-
-    h2 {
-      font-family: Montserrat, Inter, sans-serif;
-      font-size: clamp(1.6rem, 1vw + 1rem, 2.2rem);
-      margin: 0 0 16px;
-      display: inline-block;
-      position: relative
-    }
-
-    h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -6px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: .75
-    }
-
-    .muted {
-      color: var(--muted)
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px
-    }
-
-    @media (min-width:720px) {
-      .cards {
-        grid-template-columns: repeat(3, 1fr)
-      }
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, .015), rgba(255, 255, 255, .006));
-      border-radius: var(--radius);
-      border: 1px solid rgba(255, 255, 255, .08);
-      box-shadow: var(--shadow);
-      padding: 20px
-    }
-
-    .card h3 {
-      margin: 6px 0 8px;
-      font-family: Montserrat, Inter, sans-serif
-    }
-
-    .price {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      margin: 6px 0 12px
-    }
-
-    .big {
-      font-family: Montserrat, Inter, sans-serif;
-      font-size: 2.25rem;
-      font-weight: 800;
-      letter-spacing: .2px
-    }
-
-    .badge {
-      border: 1px solid rgba(255, 255, 255, .18);
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: .78rem;
-      color: var(--muted);
-      background: rgba(255, 255, 255, .02);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08)
-    }
-
-    details {
-      background: rgba(18, 18, 18, .8);
-      border: 1px solid rgba(255, 255, 255, .08);
-      border-radius: var(--radius-sm);
-      padding: 14px 16px;
-      box-shadow: var(--shadow)
-    }
-
-    details+details {
-      margin-top: 12px
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 600
-    }
-
-    .two {
-      display: grid;
-      gap: 16px
-    }
-
-    @media (min-width:940px) {
-      .two {
-        grid-template-columns: 1.15fr .85fr
-      }
-    }
-
-    .small {
-      font-size: .9rem
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 20px;
-      color: var(--muted)
-    }
-
-    .foot {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between
-    }
-
-    /* Sticky Instant-Join Bar */
-    .sticky-join {
-      position: fixed;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      z-index: 60;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(13, 13, 13, .85);
-      backdrop-filter: blur(var(--blur));
-      border: 1px solid rgba(255, 255, 255, .1);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .06)
-    }
-
-    .sticky-join .meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold));
-      box-shadow: 0 0 12px rgba(212, 175, 55, .6)
-    }
-
-    .sticky-join .btn {
-      padding: 10px 16px
-    }
-
-    .sticky-close {
-      background: transparent;
-      border: 0;
-      color: var(--muted);
-      font-weight: 700;
-      cursor: pointer
-    }
-
-    @media (min-width:920px) {
-      .sticky-join {
-        left: 24px;
-        right: auto;
-        bottom: 24px;
-        width: max-content
-      }
-    }
+    .paytray .btn{padding:14px 22px}
+    .pay{display:flex; align-items:center; gap:8px}
   </style>
 </head>
-
 <body>
   <!-- Nav -->
   <header class="nav">
     <div class="container nav-row">
       <a class="brand" href="#top" aria-label="Brand Home">
-        <img class="brand-logo" src="./assets/bsm-seal.png" alt="Bossman System logo">
+        <img class="brand-logo" src="assets/bossman-favicon.png" alt="House of Bossman crest">
         <span>Bossman System</span>
       </a>
       <nav aria-label="Main">
         <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="#program">Programs</a>
+        <a href="#proof">Testimonials</a>
         <a href="#pricing">Pricing</a>
         <a href="#apply" class="btn" style="padding:8px 14px">Join The House</a>
       </nav>
@@ -457,72 +159,39 @@
 
   <!-- Hero -->
   <main id="top" class="hero container">
-    <img src="./assets/bsm-seal.png" alt="Bossman System"
-      style="height:72px;margin-bottom:14px;border-radius:12px;display:block;">
+    <img src="assets/bsm-seal.png" alt="House of Bossman seal" style="height:72px;margin-bottom:14px;border-radius:12px;display:block;object-fit:cover;">
     <span class="pill">House of Bossman</span>
     <h1><span class="accent">Command Your Body.</span> Command Your Life.</h1>
-    <p class="sub">12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20
-      lbs, build muscle, and show up stronger for your kids.</p>
-    <div class="cta-row">
-      <a class="btn" href="#apply">Start Your Assessment</a>
-      <a class="btn outline" href="#pricing" aria-label="See pricing options">Join The House</a>
+    <p class="sub">12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and show up stronger for your kids.</p>
+    <div class="cta-row" role="group" aria-label="Primary actions">
+      <a class="btn" href="#apply">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="#1a1a1a" d="M13 5l7 7-7 7M5 12h14"/></svg>
+        <span>Start Your Assessment</span>
+      </a>
+      <a class="btn outline" href="#proof" aria-label="See client wins">See Client Wins</a>
+      <a class="btn outline" href="#pricing" aria-label="See pricing">Pricing</a>
     </div>
-    <div class="hero-card">
-      <div>✔️ Weekly 1:1 accountability</div>
-      <div>✔️ Gym or home training</div>
-      <div>✔️ Nutrition that fits custody life</div>
+
+    <!-- Quick Pay Tray -->
+    <div class="paytray" aria-label="Quick pay options">
+      <a class="btn outline" href="#apply">Join The House</a>
+      <a class="btn" href="https://www.paypal.me/houseofbsm" target="_blank" rel="noopener">
+        <span class="pay">💳 PayPal</span>
+      </a>
+      <a class="btn outline" href="https://cash.app/$houseofbsm" target="_blank" rel="noopener">
+        <span class="pay">💵 Cash&nbsp;App</span>
+      </a>
     </div>
   </main>
 
   <!-- About -->
-  <section id="about" class="section container two">
-    <div>
-      <h2>About The House</h2>
-      <p class="muted">Discipline over drama. Simplicity over gimmicks. We build men who lead by example—starting with
-        their health, energy, and presence.</p>
-      <div class="cards" style="grid-template-columns:1fr; gap:12px">
-        <div class="card">
-          <h3>Mission</h3>
-          <p>Rebuild single & divorced dads into confident leaders—strong body, clear mind, stable habits.</p>
-        </div>
-        <div class="card">
-          <h3>Method</h3>
-          <p>Customized training, macro targets, weekly accountability. Real life scheduling, no fluff.</p>
-        </div>
-        <div class="card">
-          <h3>Motto</h3>
-          <p><em>Established per Disciplin MMXXV.</em></p>
-        </div>
-      </div>
-    </div>
-    <aside class="card">
-      <h3>Guarantee</h3>
-      <p>Don’t see visible results in 12 weeks? I’ll coach you for free until you do. Zero risk.</p>
-      <a class="btn" href="#apply">Apply Now</a>
-    </aside>
+  <section id="about" class="section container">
+    <h2>About</h2>
+    <p class="muted">Built for single & divorced dads. Discipline first, complexity last. Training, nutrition, and accountability — aligned with custody schedules and real life.</p>
   </section>
 
-  <!-- Programs -->
-  <section id="programs" class="section container">
-    <h2>Programs</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>Custom Training</h3>
-        <p>3–4 days/week. Gym or home. Progressive plan matched to equipment, joints, and schedule.</p>
-      </article>
-      <article class="card">
-        <h3>Nutrition Blueprint</h3>
-        <p>Calories & macros. Plug-and-play meals that work with custody life—no crash diets.</p>
-      </article>
-      <article class="card">
-        <h3>Accountability</h3>
-        <p>Weekly check-ins, form reviews, and messaging so you never fall off.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="section container">
+  <!-- Social Proof -->
+  <section id="proof" class="section container">
     <h2>Wins from Dads Like You</h2>
     <p class="muted">Real transformations. Real confidence.</p>
     <div class="cards" role="list">
@@ -547,17 +216,44 @@
     </div>
   </section>
 
-  <!-- Pricing / Payments -->
-  <section id="pricing" class="section container">
-    <h2>Join The House</h2>
-    <p class="muted">Choose your path — discipline is the entry fee.</p>
+  <!-- Program -->
+  <section id="program" class="section container two">
+    <div>
+      <h2>The Bossman System</h2>
+      <p class="muted">A simple system tailored to your reality: work, kids, stress, and limited time.</p>
+      <div class="stack">
+        <div class="card">
+          <h3><span class="check">▣</span>Custom Training</h3>
+          <p>3–4 days/week. Gym or home. Progressive plan that fits your schedule and equipment.</p>
+        </div>
+        <div class="card">
+          <h3><span class="check">▣</span>Nutrition Blueprint</h3>
+          <p>Calories & macros with plug-and-play meals that work with custody life—no crash diets.</p>
+        </div>
+        <div class="card">
+          <h3><span class="check">▣</span>Accountability</h3>
+          <p>Weekly 1:1 check-ins, form reviews, and messaging support so you never fall off.</p>
+        </div>
+      </div>
+    </div>
+    <aside aria-label="Guarantee" class="card">
+      <h3>My Guarantee</h3>
+      <p>Don’t see visible results in 12 weeks? I’ll coach you for free until you do. Zero risk.</p>
+      <a class="btn" href="#apply">Apply Now</a>
+    </aside>
+  </section>
 
+  <!-- Pricing -->
+  <section id="pricing" class="section container">
+    <h2>Simple Pricing</h2>
+    <p class="muted">Premium 1:1 coaching for 12 weeks. Payment plans available.</p>
     <div class="cards">
-      <!-- 12-Week Program -->
       <article class="card">
         <span class="badge">Most Popular</span>
-        <h3>Bossman System — 12 Weeks</h3>
-        <div class="price"><span class="big">$1,500</span><span class="muted">one-time</span></div>
+        <h3>Bossman System – 12 Weeks</h3>
+        <div class="price">
+          <span class="big">$1,500</span><span class="muted">one-time</span>
+        </div>
         <ul>
           <li>Custom plan + weekly 1:1 calls</li>
           <li>Nutrition targets & templates</li>
@@ -565,41 +261,50 @@
           <li>Form checks & adjustments</li>
         </ul>
         <div class="cta-row">
-          <a class="btn" href="https://paypal.me/bossmansystem/1500" target="_blank" rel="noopener">💳 Pay with
-            PayPal</a>
-          <a class="btn outline" href="https://cash.app/$HouseOfBSM" target="_blank" rel="noopener">💵 Cash App
-            $HouseOfBSM</a>
+          <a class="btn" href="#apply">Apply Now</a>
+          <a class="btn outline" href="#faq">Questions?</a>
         </div>
       </article>
-
-      <!-- Payment Plan -->
       <article class="card">
         <span class="badge">Flexible</span>
         <h3>Payment Plan</h3>
-        <div class="price"><span class="big">$600</span><span class="muted">/ mo × 3</span></div>
-        <p class="muted">Same program, split into 3 payments.</p>
-        <div class="cta-row">
-          <a class="btn" href="https://paypal.me/bossmansystem/600" target="_blank" rel="noopener">💳 Pay $600 via
-            PayPal</a>
-          <a class="btn outline" href="https://cash.app/$HouseOfBSM" target="_blank" rel="noopener">💵 Cash App</a>
+        <div class="price">
+          <span class="big">$600</span><span class="muted">/ mo × 3</span>
         </div>
+        <p class="muted">Same program, spread out payments.</p>
+        <a class="btn" href="#apply">Apply with Payment Plan</a>
       </article>
-
-      <!-- Brotherhood -->
       <article class="card">
-        <span class="badge">Exclusive</span>
-        <h3>Bossman Brotherhood</h3>
-        <div class="price"><span class="big">$150</span><span class="muted">/ mo</span></div>
-        <p class="muted">Weekly group call + community accountability.</p>
-        <div class="cta-row">
-          <a class="btn" href="https://paypal.me/bossmansystem/150" target="_blank" rel="noopener">💳 Pay with
-            PayPal</a>
-          <a class="btn outline" href="https://cash.app/$HouseOfBSM" target="_blank" rel="noopener">💵 Cash App</a>
+        <span class="badge">Upsell (Optional)</span>
+        <h3>Bossman Brotherhood Add-On</h3>
+        <div class="price">
+          <span class="big">$150</span><span class="muted">/ mo</span>
         </div>
+        <p class="muted">Weekly group call + community accountability.</p>
+        <a class="btn outline" href="#apply">Add to Application</a>
       </article>
     </div>
+  </section>
 
-    <p class="small muted" style="margin-top:18px"><em>Established per Disciplin MMXXV.</em></p>
+  <!-- FAQ -->
+  <section id="faq" class="section container">
+    <h2>FAQ</h2>
+    <details>
+      <summary>How fast will I see results?</summary>
+      <p>Most dads notice changes in 2–3 weeks; meaningful cuts happen by weeks 6–12 with consistency.</p>
+    </details>
+    <details>
+      <summary>Do I need a gym?</summary>
+      <p>No. I build for whatever you’ve got—gym or home, minimal gear required.</p>
+    </details>
+    <details>
+      <summary>What if I’ve “tried everything”?</summary>
+      <p>You’ve tried tactics. This is a system: training, nutrition, and accountability built for your reality.</p>
+    </details>
+    <details>
+      <summary>What if life gets busy with kids/work?</summary>
+      <p>We design around custody schedules and travel. The plan flexes; the standard doesn’t.</p>
+    </details>
   </section>
 
   <!-- Apply -->
@@ -613,43 +318,41 @@
         <li>Get your plan + start week 1</li>
       </ol>
       <div class="cta-row">
-        <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">Start Your
-          Assessment</a>
-        <a class="btn outline" href="#pricing">Or Join Now</a>
+        <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="#1a1a1a" d="M13 5l7 7-7 7M5 12h14"/></svg>
+          <span>Start Your Assessment</span>
+        </a>
+        <a class="btn outline" href="https://calendly.com/your-handle/10min" target="_blank" rel="noopener">Book 10-min Call</a>
       </div>
       <p class="small muted" style="margin-top:8px">Prefer DM? IG/TikTok: @max._.julien</p>
     </div>
-    <form class="card" aria-label="Quick interest form" action="https://formspree.io/f/xblzzpoa" method="POST">
 
+    <form class="card" aria-label="Quick interest form"
+      action="https://formspree.io/f/xblzzpoa" method="POST">
       <label class="small muted" for="name">Name</label>
       <input id="name" name="name" required placeholder="Your name"
-        style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+             style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;">
 
       <label class="small muted" for="email">Email</label>
       <input id="email" name="email" type="email" required placeholder="you@example.com"
-        style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;">
+             style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;">
 
       <label class="small muted" for="goal">Goal</label>
       <textarea id="goal" name="goal" rows="3"
-        placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…"
-        style="width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;"></textarea>
+                placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…"
+                style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;"></textarea>
 
-      <!-- Force a copy to your inbox every time -->
-      <input type="hidden" name="_cc" value="marcuscreese94@gmail.com">
-      <!-- Optional: nicer subject line in your inbox -->
       <input type="hidden" name="_subject" value="New Bossman System lead">
-
-      <button class="btn" type="submit" aria-label="Submit quick interest" style="margin-top:10px;">Submit</button>
+      <button class="btn" type="submit" aria-label="Submit quick interest" style="margin-top:12px;">Submit</button>
     </form>
-
   </section>
 
   <!-- Footer -->
   <footer class="container">
     <div class="foot">
       <div class="brand">
-        <img class="brand-logo" src="./assets/bsm-seal.png" alt="Bossman System logo">
-        <span class="muted">© <span id="y"></span> Bossman System</span>
+        <img class="brand-logo" src="assets/bossman-favicon.png" alt="Bossman crest">
+        <span class="muted">© <span id="y"></span> Bossman System — <em>Established per Disciplin MMXXV</em></span>
       </div>
       <div class="small">
         <a href="https://instagram.com/max._.julien" target="_blank" rel="noopener">Instagram</a> |
@@ -660,45 +363,86 @@
     </div>
   </footer>
 
-  <!-- Sticky Instant-Join Bar -->
-  <div class="sticky-join" id="stickyJoin" role="complementary" aria-label="Instant join bar" style="display:none">
-    <div class="meta"><span class="dot" aria-hidden="true"></span><span>Join The House</span></div>
-    <div style="display:flex; gap:8px; align-items:center">
-      <a class="btn" href="https://paypal.me/bossmansystem/1500" target="_blank" rel="noopener">💳 PayPal</a>
-      <a class="btn outline" href="https://cash.app/$HouseOfBSM" target="_blank" rel="noopener">💵 Cash App</a>
-      <button class="sticky-close" id="stickyClose" aria-label="Hide">✕</button>
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta" role="complementary" aria-label="Quick Apply bar">
+    <div class="meta">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Bossman System</span>
     </div>
+    <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="#1a1a1a" d="M13 5l7 7-7 7M5 12h14"/></svg>
+      <span>Start</span>
+    </a>
   </div>
 
-  <!-- Minimal console analytics + sticky reveal -->
+  <!-- Variant + lightweight analytics (unchanged core) -->
   <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
+  (() => {
+    const TAGLINE = {A:"Command Your Body. Command Your Life.", B:"Discipline. Power. Results."};
+    const SUBHEAD = {
+      A:"12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and show up stronger for your kids.",
+      B:"Drop 10–20 lbs. Build muscle. Lead your family by example—without living in the gym or wrecking your schedule."
+    };
+    const CTA_TEXT = {A:"Start Your Assessment", B:"Start Week 1"};
+    const DESTINATION = {D1:"FORM", D2:"APPLY"};
+    const FORM_URL = "https://forms.gle/zqNKXEdhWR6UJ5CM9";
+    const APPLY_ANCHOR = "#apply";
 
-    // Show sticky join after 1.6s; respect dismiss for 24h
-    (function () {
-      const KEY = 'bsm_sticky_dismiss_ts';
-      const ts = +localStorage.getItem(KEY) || 0;
-      const day = 24 * 60 * 60 * 1000;
-      const bar = document.getElementById('stickyJoin');
-      if (Date.now() - ts > day) { setTimeout(() => { bar.style.display = 'flex'; }, 1600); }
-      document.getElementById('stickyClose').addEventListener('click', () => {
-        localStorage.setItem(KEY, Date.now().toString());
-        bar.remove();
-      });
-    })();
+    function pickStable(k, variants){
+      const t=k+"_ts"; let v=localStorage.getItem(k); let ts=parseInt(localStorage.getItem(t)||"0",10);
+      const expired = Date.now()-ts > 30*24*60*60*1000;
+      if(!v || !(v in variants) || expired){
+        const keys = Object.keys(variants); v = keys[Math.floor(Math.random()*keys.length)];
+        localStorage.setItem(k,v); localStorage.setItem(t,Date.now().toString());
+      } return v;
+    }
+    const vTag = pickStable("bossman_tagline_variant", TAGLINE);
+    const vSub = pickStable("bossman_subhead_variant", SUBHEAD);
+    const vCta = pickStable("bossman_cta_variant", CTA_TEXT);
+    const vDest = pickStable("bossman_dest_variant", DESTINATION);
 
-    // Lightweight click logger (console only)
-    (() => {
-      const LS_KEY = "bossman_stats_v1"; const MAX = 2000;
-      const load = () => { try { return JSON.parse(localStorage.getItem(LS_KEY) || "[]") } catch (e) { return [] } };
-      const save = (a) => { try { if (a.length > MAX) a = a.slice(a.length - MAX); localStorage.setItem(LS_KEY, JSON.stringify(a)) } catch (e) { } };
-      const rec = (ev, l, h) => { const a = load(); a.push({ ts: Date.now(), ev, l, h }); save(a) };
-      document.querySelectorAll('a.btn').forEach(a => a.addEventListener('click', () => rec('click', a.textContent.trim(), a.href || ''), { passive: true }));
-      rec('view', 'page', location.pathname);
-      console.log("%cBossman Console Analytics ready. Run localStorage.getItem('bossman_stats_v1')", "background:#D4AF37;color:#111;padding:2px 6px;border-radius:4px;");
-    })();
+    const h1=document.querySelector(".hero h1");
+    if(h1){
+      const txt=TAGLINE[vTag]; const parts=txt.split(". ");
+      h1.innerHTML = parts.length>1 ? `<span class="accent">${parts[0]}.</span> ${parts.slice(1).join(". ")}` : txt;
+    }
+    const sub=document.querySelector(".hero .sub"); if(sub) sub.textContent=SUBHEAD[vSub];
+
+    const heroPrimary=document.querySelector(".hero .btn:not(.outline)");
+    const allFormBtns=[...document.querySelectorAll('a.btn[href*="forms.gle"]')];
+    allFormBtns.forEach(a=>{const s=a.querySelector("span"); if(s) s.textContent=CTA_TEXT[vCta];});
+
+    const variantSignature=`TA_${vTag}|SUB_${vSub}|CTA_${vCta}|DEST_${vDest}`;
+    function track(event, extra={}){
+      const payload={event, page: location.pathname, variant_sig: variantSignature, ...extra};
+      try{ console.log("[BossmanTrack]", payload); }catch(e){}
+      try{ window.dataLayer = window.dataLayer || []; window.dataLayer.push(payload); }catch(e){}
+    }
+    function tagUrlString(href){
+      try{
+        const url=new URL(href, location.origin);
+        url.searchParams.set("variant", variantSignature);
+        if(![...url.searchParams.keys()].some(k=>k.startsWith("utm_"))){
+          url.searchParams.set("utm_source","site");
+          url.searchParams.set("utm_medium","cta");
+          url.searchParams.set("utm_campaign","bossman_launch");
+          url.searchParams.set("utm_content",variantSignature);
+        } return url.toString();
+      }catch(e){return href;}
+    }
+
+    const ctas=[...document.querySelectorAll('a.btn[href*="forms.gle"], a.btn[href*="calendly.com"], a.btn[href="#apply"], a.btn[href="#faq"]')];
+    ctas.forEach(a=>a.href=tagUrlString(a.href||a.getAttribute("href")||""));
+    if(heroPrimary){
+      const chosen=(vDest==="D1")?FORM_URL:APPLY_ANCHOR;
+      heroPrimary.setAttribute("href", chosen==="FORM"? tagUrlString(FORM_URL): APPLY_ANCHOR);
+      heroPrimary.addEventListener("click",()=>track("cta_click",{label:"Hero Primary"}),{passive:true});
+    }
+    document.querySelectorAll(".btn").forEach(a=>a.addEventListener("click",()=>track("cta_click",{label:a.textContent.trim()}),{passive:true}));
+    track("page_view");
+  })();
   </script>
-</body>
 
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
 </html>
