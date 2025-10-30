@@ -1,0 +1,10 @@
+# robots.txt — Bossman System
+User-agent: *
+Allow: /
+
+# Don’t index build junk if it ever appears
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /build/
+
+Sitemap: https://bossmansystem.com/sitemap.xml
