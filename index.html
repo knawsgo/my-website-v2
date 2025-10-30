@@ -1,180 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bossman System — Command Your Body. Command Your Life.</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicon (SVG) + fallbacks -->
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="assets/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/favicon.svg">
-  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Bossman System — Command Your Body. Command Your Life.</title>
+  <meta name="description" content="12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and show up stronger for your kids." />
+  <link rel="canonical" href="https://bossmansystem.com/">
 
-  <style>
-    :root{
-      --bg:#0b0b0b;
-      --bg2:#111;
-      --gold:#d4af37;
-      --gold-soft:#f3d36a;
-      --text:#eee;
-      --muted:#b7b7b7;
-      --ring: 0 12px 40px rgba(212,175,55,.35);
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 700px at 20% 10%, #1a1a1a 0%, #0b0b0b 55%, #070707 100%);color:var(--text);font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif; }
-    a{color:var(--gold);text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 16px 80px}
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
 
-    /* NAV */
-    .nav{display:flex;align-items:center;gap:14px;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:44px;height:44px;object-fit:contain;display:block;filter: drop-shadow(0 2px 10px rgba(0,0,0,.6));}
-    .brand .name{font-weight:800;line-height:1.1}
-    .name .top{display:block;font-size:20px;letter-spacing:.3px}
-    .name .bottom{display:block;font-size:20px;color:#fff;opacity:.85}
-    .navlinks{display:flex;gap:22px;flex-wrap:wrap}
-    .navlinks a{color:#eaeaea;opacity:.9}
-    .navcta{margin-left:auto}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:999px;background:linear-gradient(180deg, var(--gold-soft), var(--gold));color:#1b1200;font-weight:800;box-shadow:var(--ring);border:1px solid rgba(212,175,55,.35)}
-    .btn.ghost{background:transparent;color:var(--text);border:1px solid #2a2a2a}
-    .pill{display:inline-block;background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.25);color:var(--gold);padding:10px 16px;border-radius:999px;font-weight:800}
+  <!-- Social -->
+  <meta property="og:title" content="Bossman System — Command Your Body. Command Your Life.">
+  <meta property="og:description" content="12-week coaching for dads who want visible results. Discipline. Prestige. Transformation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bossmansystem.com/">
+  <meta property="og:image" content="https://bossmansystem.com/assets/bsm-seal.png">
+  <meta name="twitter:card" content="summary_large_image">
 
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1fr;gap:22px;padding:26px 0 18px}
-    .crest{display:flex;align-items:center;gap:16px}
-    .crest img{width:76px;height:76px;object-fit:contain}
-    h1{font-size:54px;line-height:1.02;margin:6px 0 10px}
-    .gold{color:var(--gold)}
-    p.lead{color:#d9d9d9;max-width:760px;font-size:18px}
-
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
-    .cta-stack{display:flex;gap:14px;flex-wrap:wrap}
-
-    /* Floating payment dock */
-    .dock{position:sticky;bottom:14px;backdrop-filter: blur(6px);background:rgba(10,10,10,.75);border:1px solid #232323;border-radius:26px;padding:10px;display:flex;gap:10px;align-items:center;justify-content:center;box-shadow: 0 10px 50px rgba(0,0,0,.5);margin-top:26px}
-    .dock .btn{padding:14px 18px}
-    .dock .btn.small{padding:12px 16px}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:#151515;border:1px solid #242424;color:#f1f1f1}
-    .badge img{width:18px;height:18px;object-fit:contain}
-
-    /* Sections */
-    section{padding:56px 0;border-top:1px solid #171717}
-    h2{font-size:32px;margin:0 0 10px}
-    .muted{color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width:760px){
-      h1{font-size:40px}
-      .brand img{width:38px;height:38px}
-      .name .top,.name .bottom{font-size:18px}
-      .dock{border-radius:20px}
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Sticky top nav -->
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/favicon.png" alt="Bossman crest" class="brand__crest" />
+      <span class="brand__name"><strong>Bossman</strong> System</span>
+    </a>
 
-  <div class="wrap">
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
 
-    <!-- NAV -->
-    <header class="nav">
-      <div class="brand">
-        <img src="assets/bsm-seal.png" alt="Bossman System seal">
-        <div class="name">
-          <span class="top">Bossman</span>
-          <span class="bottom">System</span>
-        </div>
-      </div>
+    <a class="btn btn--gold nav__cta" href="#apply">Join The House</a>
+  </header>
 
-      <nav class="navlinks">
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#pricing">Pricing</a>
-      </nav>
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="hero__crest">
+      <img src="assets/bsm-seal.png" alt="House of Bossman seal" class="crest__img" loading="eager">
+    </div>
 
-      <div class="navcta">
-        <a class="btn" href="#apply">Join The House</a>
-      </div>
-    </header>
+    <div class="hero__copy">
+      <span class="pill">House of Bossman</span>
+      <h1><span class="gold">Command Your Body.</span> Command Your Life.</h1>
+      <p class="lead">
+        12-week coaching for dads who want visible results without starving or living in the gym.
+        Drop 10–20 lbs, build muscle, and show up stronger for your kids.
+      </p>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="crest">
-        <img src="assets/bsm-seal.png" alt="House of Bossman">
-        <span class="pill">House of Bossman</span>
-      </div>
+      <div class="cta-row">
+        <!-- TODO: Replace the href below with your real assessment form URL -->
+        <a id="apply" class="btn btn--gold btn--lg" href="https://forms.gle/YOUR-FORM-ID">Start Your Assessment</a>
 
-      <h1><span class="gold">Command Your Body.</span> Command Your Life.</h1>
-      <p class="lead">
-        12-week coaching for dads who want visible results without starving or living in the gym.
-        Drop 10–20 lbs, build muscle, and show up stronger for your kids.
-      </p>
+        <div class="pay-row">
+          <a class="chip" href="#apply">Join The House</a>
+          <a class="chip" href="https://www.paypal.me/houseofbsm" target="_blank" rel="noopener">PayPal</a>
+          <a class="chip" href="https://cash.app/$houseofbsm" target="_blank" rel="noopener">Cash App</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-      <div class="cta-row">
-        <a class="btn" href="#apply">Start Your Assessment</a>
-        <a class="btn ghost" href="#wins">See Client Wins</a>
-        <a class="btn ghost" href="#pricing">Pricing</a>
-      </div>
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>
+      The Bossman System is simple: strength first, discipline always.
+      No endless cardio. No starving. Just tight nutrition, efficient training, and accountability that actually sticks.
+    </p>
+  </section>
 
-      <!-- Floating Payment Dock -->
-      <div class="dock">
-        <a class="btn small" href="#apply">Join The House</a>
-        <a class="btn small" href="https://www.paypal.com/ncp/payment/HOUSEOFBOSS" target="_blank" rel="noopener">PayPal</a>
-        <a class="badge" href="https://cash.app/$houseofbsm" target="_blank" rel="noopener">
-          <img src="assets/favicon.svg" alt=""> Cash App
-        </a>
-      </div>
-    </section>
+  <!-- Programs -->
+  <section id="programs" class="section">
+    <h2>Programs</h2>
+    <ul class="list">
+      <li><strong>12-Week Dad Rebuild:</strong> Drop 10–20 lbs, regain energy, and lead at home.</li>
+      <li><strong>Bossman Cut:</strong> Tighten waist, keep muscle, look athletic in clothes.</li>
+      <li><strong>Accountability & Check-ins:</strong> Weekly progress reviews, adjustments, and momentum.</li>
+    </ul>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>Why Bossman</h2>
-      <p class="muted">Discipline. Prestige. Transformation. No fluff, no fads — simple plans, visible results, dad-proof execution.</p>
-    </section>
+  <!-- Testimonials (placeholders to be swapped later) -->
+  <section id="testimonials" class="section">
+    <h2>Testimonials</h2>
+    <div class="cards">
+      <article class="card">
+        <p>“Down 16 lbs, strength up, and my kids notice. This system works.”</p>
+        <span class="card__meta">— J., Father of 2</span>
+      </article>
+      <article class="card">
+        <p>“No cardio marathons. Just discipline and results. I feel like myself again.”</p>
+        <span class="card__meta">— M., New Dad</span>
+      </article>
+    </div>
+  </section>
 
-    <!-- PROGRAMS -->
-    <section id="programs">
-      <h2>Programs</h2>
-      <p class="muted">12-Week Bossman Transformation · High-Protein Blueprint · Zero-Cardio Option · Strength First</p>
-    </section>
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="price">
+        <h3>12-Week Coaching</h3>
+        <p class="muted">Custom plan, check-ins, and direct accountability.</p>
+        <a class="btn btn--gold" href="#apply">Apply Now</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials">
-      <h2>Testimonials</h2>
-      <p class="muted">Real client stories coming soon. We’ll swap in headshots and screenshots for instant trust.</p>
-    </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© <span id="y"></span> Bossman System. All rights reserved.</p>
+    <nav class="footer__links">
+      <a href="/sitemap.xml">Sitemap</a>
+      <a href="/robots.txt">Robots</a>
+    </nav>
+  </footer>
 
-    <!-- PRICING -->
-    <section id="pricing">
-      <h2>Pricing</h2>
-      <p class="muted">Founding rate available. Pay in full via PayPal or Cash App <strong>$houseofbsm</strong>. Payment plan on request.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://www.paypal.com/ncp/payment/HOUSEOFBOSS" target="_blank" rel="noopener">Pay with PayPal</a>
-        <a class="btn" href="https://cash.app/$houseofbsm" target="_blank" rel="noopener">Pay with Cash App</a>
-      </div>
-    </section>
-
-    <!-- APPLY -->
-    <section id="apply">
-      <h2>Apply — Start Your Assessment</h2>
-      <p class="muted">Answer 6 quick questions. If it’s a fit, we lock your start date and you’re in The House.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://forms.gle/your-assessment" target="_blank" rel="noopener">Open Assessment</a>
-        <a class="btn ghost" href="mailto:coach@bossmansystem.com?subject=Bossman%20System%20Question">Email Coach</a>
-      </div>
-    </section>
-
-    <footer style="padding:40px 0;color:#9b9b9b">
-      © <span id="y"></span> Bossman System. Built for fathers who lead.
-    </footer>
-
-  </div>
-
-  <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
+
