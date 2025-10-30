@@ -1,0 +1,52 @@
+/* ===== Bossman Motion & Glow ===== */
+
+/* entrance fade/slide (loads soft, luxury) */
+@keyframes bossman-fade-up {
+  from { opacity: 0; transform: translateY(10px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+/* gold glow on hover (subtle, not cheesy) */
+:root {
+  --glow: 0 0 22px rgba(216,180,90,.28), 0 0 60px rgba(216,180,90,.18);
+}
+
+.btn--gold,
+.pill,
+.card,
+.nav a {
+  transition: transform .15s ease, filter .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.btn--gold:hover,
+.pill:hover,
+.card:hover,
+.nav a:hover {
+  box-shadow: var(--glow);
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+/* fade in key blocks on first paint */
+.hero,
+.hero__crest,
+.hero__copy,
+.cta-row,
+.pay-row,
+.section,
+.footer {
+  animation: bossman-fade-up .6s ease-out both;
+}
+
+.hero       { animation-delay: .05s }
+.hero__crest{ animation-delay: .10s }
+.hero__copy { animation-delay: .15s }
+.cta-row    { animation-delay: .20s }
+.pay-row    { animation-delay: .25s }
+.section    { animation-delay: .30s }
+.footer     { animation-delay: .35s }
+
+/* motion safety for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important }
+}
