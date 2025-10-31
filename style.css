@@ -1,52 +1,117 @@
-/* ===== Bossman Motion & Glow ===== */
+/* ===== Base tokens ===== */
+:root{
+  --bg:#0a0a0a;
+  --panel:#101010;
+  --text:#e9e9e9;
+  --muted:#b8b8b8;
+  --gold:#d9b342;
+  --gold-deep:#c9a132;
+  --ring: rgba(217,179,66,.35);
+  --ring-soft: rgba(217,179,66,.15);
+}
 
-/* entrance fade/slide (loads soft, luxury) */
+/* Reset + base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  color:var(--text);
+  background: radial-gradient(900px 500px at 90% 10%, rgba(217,179,66,.06), transparent) ,
+             radial-gradient(800px 600px at 0% 70%, rgba(217,179,66,.04), transparent),
+             var(--bg);
+}
+
+/* Type scale */
+h1{font-size:clamp(34px,6vw,60px); line-height:1.02; margin:6px 0 8px}
+h2{font-size:28px;margin:0 0 12px}
+p{margin:0 0 14px;color:var(--muted)}
+a{color:var(--text); text-decoration:none}
+a:hover{color:var(--gold)}
+
+/* Layout containers */
+.container{max-width:1080px;margin:0 auto;padding:22px 20px}
+
+/* ===== Nav ===== */
+.nav{position:sticky; top:0; z-index:20; background:rgba(10,10,10,.85); backdrop-filter:saturate(1.2) blur(8px); }
+.nav .container{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:12px; padding-bottom:12px}
+.brand{display:flex; align-items:center; gap:12px}
+.brand__name{font-weight:700; letter-spacing:.4px}
+.brand img{width:36px; height:36px; object-fit:contain}
+
+.nav__links{display:flex; gap:18px; align-items:center}
+.nav__links a{padding:6px 8px; border-radius:8px; border:1px solid transparent}
+.nav__links a:hover{border-color:var(--ring-soft)}
+
+/* ===== Hero ===== */
+.hero{padding:54px 0}
+.hero__crest{display:flex; align-items:center; justify-content:center; margin-bottom:18px}
+.crest__img{width:260px; max-width:72vw; filter: drop-shadow(0 6px 20px rgba(0,0,0,.45))}
+.hero__copy{max-width:820px; margin:0 auto; text-align:left}
+.pill{
+  display:inline-block;
+  background:rgba(216,180,90,.12);
+  color:var(--gold);
+  border:1px solid var(--ring-soft);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:600;
+  letter-spacing:.2px;
+  margin:0 0 10px;
+}
+
+/* CTA row + buttons */
+.cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px;
+     padding:12px 18px; border-radius:14px; border:1px solid var(--ring-soft); transition:filter .15s ease, transform .15s ease}
+.btn--lg{padding:16px 22px; font-size:18px}
+.btn--gold{
+  background:linear-gradient(#e9c76a,#ca9f2e);
+  color:#121212; font-weight:700; border-color:var(--ring)
+}
+.btn--gold:hover{filter:brightness(1.05); transform:translateY(-1px)}
+.chip{display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:10px 16px; border:1px solid var(--ring-soft)}
+.chip:hover{border-color:var(--ring); color:var(--gold)}
+
+/* ===== Sections ===== */
+section{padding:48px 18px; max-width:980px; margin:0 auto}
+.list{color:var(--muted); line-height:1.6}
+.cards{display:grid; gap:14px}
+.card{background:#101010; border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:18px}
+.card__meta{color:var(--muted); font-size:14px}
+
+/* ===== Pricing ===== */
+.pricing{display:grid; gap:16px}
+.price{background:#0f0f0f; border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:18px}
+.muted{color:var(--muted)}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid rgba(255,255,255,.06); text-align:center; padding:30px 10%; color:#777; font-size:14px}
+.footer a{color:var(--muted)}
+.footer a:hover{color:var(--gold)}
+
+/* ===== Motion & Glow (your previous file) ===== */
 @keyframes bossman-fade-up {
-  from { opacity: 0; transform: translateY(10px) }
-  to   { opacity: 1; transform: translateY(0) }
+  from { opacity:0; transform: translateY(10px) }
+  to   { opacity:1; transform: translateY(0)    }
 }
-
-/* gold glow on hover (subtle, not cheesy) */
-:root {
-  --glow: 0 0 22px rgba(216,180,90,.28), 0 0 60px rgba(216,180,90,.18);
+:root{ --glow: 0 0 22px rgba(216,180,90,.28), 0 0 60px rgba(216,180,90,.18) }
+.btn--gold,.pill,.card,.nav a{ transition: transform .15s ease, filter .15s ease, box-shadow .2s ease, border-color .2s ease }
+.btn--gold:hover,.pill:hover,.card:hover,.nav a:hover{
+  box-shadow: var(--glow); transform: translateY(-1px); filter: brightness(1.04);
 }
-
-.btn--gold,
-.pill,
-.card,
-.nav a {
-  transition: transform .15s ease, filter .15s ease, box-shadow .2s ease, border-color .2s ease;
-}
-
-.btn--gold:hover,
-.pill:hover,
-.card:hover,
-.nav a:hover {
-  box-shadow: var(--glow);
-  transform: translateY(-1px);
-  filter: brightness(1.04);
-}
-
-/* fade in key blocks on first paint */
-.hero,
-.hero__crest,
-.hero__copy,
-.cta-row,
-.pay-row,
-.section,
-.footer {
+.hero,.hero__crest,.hero__copy,.cta-row,.pay-row,.section,.footer{
   animation: bossman-fade-up .6s ease-out both;
 }
+.hero{ animation-delay:.05s } .hero__crest{ animation-delay:.10s } .hero__copy{ animation-delay:.15s }
+.cta-row{ animation-delay:.20s } .section{ animation-delay:.30s } .footer{ animation-delay:.35s }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }
 
-.hero       { animation-delay: .05s }
-.hero__crest{ animation-delay: .10s }
-.hero__copy { animation-delay: .15s }
-.cta-row    { animation-delay: .20s }
-.pay-row    { animation-delay: .25s }
-.section    { animation-delay: .30s }
-.footer     { animation-delay: .35s }
-
-/* motion safety for accessibility */
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important }
+/* ===== Responsive tweaks ===== */
+@media (max-width: 768px){
+  .nav .container{flex-direction:column; gap:10px}
+  .nav__links{display:flex; flex-wrap:wrap; justify-content:center}
+  .hero{padding:60px 6%}
+  .crest__img{width:180px}
+  .btn--lg{font-size:16px}
 }
