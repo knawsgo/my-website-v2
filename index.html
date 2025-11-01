@@ -1,133 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title> Bossman System — Command Your Body. Command Your Life.</title>
-  <meta name="description" content="12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and show up stronger for your kids." />
-  <link rel="canonical" href="https://bossmansystem.com/">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bossman System — Command Your Body. Command Your Life.</title>
+  <meta name="description" content="12-week coaching for dads: drop 10–20 lbs, build muscle, and regain confidence. Join The House of Bossman."/>
+  <meta name="theme-color" content="#0B0B0B"/>
 
   <!-- Icons -->
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="apple-touch-icon" href="assets/favicon.png"/>
 
-  <!-- Social -->
-  <meta property="og:title" content="Bossman System — Command Your Body. Command Your Life.">
-  <meta property="og:description" content="12-week coaching for dads who want visible results. Discipline. Prestige. Transformation.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bossmansystem.com/">
-  <meta property="og:image" content="https://bossmansystem.com/assets/bsm-seal.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Bossman System"/>
+  <meta property="og:description" content="12-week coaching for single & divorced dads: drop 10–20 lbs, build muscle, and regain confidence."/>
+  <meta property="og:image" content="assets/bsm-seal.png"/>
+  <meta property="og:type" content="website"/>
 
-  <!-- CSS -->
-<link rel="stylesheet" href="/style.css?v=3">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bg:#0A0A0A; --bg-2:#0F0F0F; --fg:#F5F5F5; --muted:#CFCFCF; --line:#1E1E1E;
+      --gold:#D4AF37; --gold-2:#B8901F; --gold-3:#F2D36A; --radius:16px; --radius-sm:12px;
+      --shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03);
+      --max:1140px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
+      background-image:
+        radial-gradient(1200px 600px at 60% -10%, rgba(212,175,55,.08), transparent 55%),
+        radial-gradient(900px 500px at -10% 20%, rgba(212,175,55,.06), transparent 60%),
+        linear-gradient(180deg, #0b0b0b, #0a0a0a);
+    }
+    a{color:var(--fg); text-decoration:none}
+    .container{max-width:var(--max); margin-inline:auto; padding:28px 20px}
+    .muted{color:var(--muted)}
+    .accent{color:var(--gold)}
+    .pill{display:inline-flex; gap:8px; align-items:center; font-size:.85rem; color:#111;
+      background:linear-gradient(180deg, var(--gold-3), var(--gold));
+      padding:6px 12px; border-radius:999px; font-weight:700;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 6px 18px rgba(212,175,55,.18);
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 22px; border-radius:999px; font-weight:700; letter-spacing:.2px;
+      color:#111; background:linear-gradient(180deg, var(--gold-3), var(--gold));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 6px 18px rgba(212,175,55,.28);
+      transition:transform .08s ease, opacity .2s, box-shadow .2s;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.outline{ background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.16); box-shadow:none }
+    .chip{display:inline-flex; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.18); color:var(--muted); font-size:.86rem}
+
+    /* Nav */
+    header.nav{ position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(10,10,10,.65); border-bottom:1px solid rgba(255,255,255,.06); }
+    .nav-row{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px; font-family:Montserrat,Inter,sans-serif}
+    .brand-logo{ width:42px; height:42px; border-radius:10px; object-fit:contain; box-shadow:0 0 0 1px rgba(212,175,55,.28), 0 8px 18px rgba(0,0,0,.35) }
+    nav a{opacity:.9; margin-left:18px; font-weight:600; font-size:.95rem}
+    nav a:hover{opacity:1}
+
+    /* Hero */
+    .hero{ padding:84px 20px 48px; position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
+    .hero h1{
+      font-family:Montserrat,Inter,sans-serif; font-weight:800; line-height:1.05;
+      font-size:clamp(2.3rem, 4vw + 1rem, 4.2rem); margin:14px 0 10px; text-shadow:0 2px 24px rgba(212,175,55,.12);
+    }
+    .sub{max-width:780px; opacity:.92; font-size:1.06rem}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .hero-card{
+      margin-top:26px; background:rgba(18,18,18,.8);
+      border-radius:var(--radius); padding:16px; display:flex; gap:18px; align-items:center; flex-wrap:wrap;
+      border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow);
+    }
+
+    /* Sections */
+    .section{padding:42px 0; position:relative}
+    .section + .section{border-top:1px solid var(--line)}
+    h2{ font-family:Montserrat,Inter,sans-serif; font-size:clamp(1.6rem, 1vw + 1rem, 2.2rem); margin:0 0 10px; position:relative }
+    h2::after{ content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent); opacity:.75; }
+    .two{display:grid; gap:16px}
+    @media (min-width:940px){ .two{grid-template-columns:1.1fr .9fr} }
+
+    /* Cards */
+    .cards{display:grid; grid-template-columns:1fr; gap:16px}
+    @media (min-width:760px){ .cards{grid-template-columns:repeat(3,1fr)} }
+    .card{ background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.006));
+      border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); padding:20px; }
+    .card h3{margin:6px 0 8px; font-family:Montserrat,Inter,sans-serif}
+    .price{display:flex; align-items:flex-end; gap:8px; margin:6px 0 12px}
+    .price .big{font-family:Montserrat,Inter,sans-serif; font-size:2.25rem; font-weight:800; letter-spacing:.2px}
+    .badge{ border:1px solid rgba(255,255,255,.18); padding:4px 10px; border-radius:999px; font-size:.78rem; color:var(--muted);
+      background:rgba(255,255,255,.02); box-shadow:inset 0 1px 0 rgba(255,255,255,.08); }
+    ul{padding-left:18px; margin:8px 0}
+    li{margin:6px 0}
+
+    /* Sticky CTA */
+    .sticky-cta{
+      position:fixed; left:16px; right:16px; bottom:16px; z-index:60;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:10px 12px; border-radius:999px; background:rgba(13,13,13,.75);
+      backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,.1); box-shadow: 0 12px 28px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .sticky-cta .meta{ display:flex; align-items:center; gap:10px; font-weight:700 }
+    .dot{ width:10px; height:10px; border-radius:50%; background:radial-gradient(circle at 30% 30%, var(--gold-3), var(--gold)); box-shadow:0 0 12px rgba(212,175,55,.6) }
+    @media (min-width:900px){ .sticky-cta{display:none} }
+
+    /* Modal (Payment Instructions) */
+    .paymodal{ position:fixed; inset:0; z-index:1000; display:none; align-items:center; justify-content:center; padding:18px;
+      background:rgba(0,0,0,.6); backdrop-filter: blur(6px); }
+    .paymodal[aria-hidden="false"]{ display:flex }
+    .paymodal__box{ width:min(920px, 96vw); background:#0f0f0f; border:1px solid rgba(255,255,255,.08);
+      border-radius:16px; padding:20px; box-shadow:0 0 30px rgba(216,180,90,.18); display:grid; gap:14px; }
+    .paymodal__close{ appearance:none; border:none; background:#101010; color:#ddd; cursor:pointer;
+      border-radius:10px; padding:6px 10px; justify-self:end; border:1px solid rgba(255,255,255,.08); }
+    .paymodal__seal{ width:84px; margin:4px auto 0; display:block; filter: drop-shadow(0 0 14px rgba(216,180,90,.22)); }
+    .paymodal__title{ text-align:center; color:var(--gold); margin:4px 0 0 }
+    .paymodal__lead{ text-align:center; color:var(--muted); margin-top:-4px }
+    .paymodal__grid{ display:grid; gap:16px; grid-template-columns:1fr 1fr }
+    @media(max-width:820px){ .paymodal__grid{ grid-template-columns:1fr } }
+    .paymodal__col{ background:#0b0b0b; border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px }
+    .paymodal__qr{ border-radius:12px; border:1px solid rgba(255,255,255,.08); margin:8px 0 12px }
+    .paymodal__copyrow{ display:flex; gap:10px; align-items:center }
+    .paymodal__input{ flex:1; padding:12px 14px; border-radius:12px; background:#0a0a0a; color:#eee; border:1px solid rgba(255,255,255,.08)}
+    footer{border-top:1px solid var(--line); padding:30px 20px; color:var(--muted)}
+    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+  </style>
 </head>
 <body>
-  <!-- Sticky top nav -->
+
+  <!-- Nav -->
   <header class="nav">
-    <a class="brand" href="#top">
-      <img src="assets/favicon.png" alt="Bossman crest" class="brand__crest" />
-      <span class="brand__name"><strong>Bossman</strong> System</span>
-    </a>
-
-    <nav class="nav__links">
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#pricing">Pricing</a>
-    </nav>
-
-    <a class="btn btn--gold nav__cta" href="#apply">Join The House</a>
+    <div class="container nav-row">
+      <a class="brand" href="#top" aria-label="Brand Home">
+        <img class="brand-logo" src="assets/bsm-seal.png" alt="Bossman System logo">
+        <span>Bossman System</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#program">Programs</a>
+        <a href="#proof">Testimonials</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#apply" class="btn" style="padding:8px 14px">Join The House</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero -->
-  <main id="top" class="hero">
-    <div class="hero__crest">
-      <img src="assets/bsm-seal.png" alt="House of Bossman seal" class="crest__img" loading="eager">
+  <main id="top" class="hero container">
+    <img src="assets/bsm-seal.png" alt="Bossman System" style="height:68px;margin-bottom:14px;border-radius:12px;display:block;">
+    <span class="pill">Built for single & divorced dads</span>
+    <h1><span class="accent">Command Your Body.</span> Command Your Life.</h1>
+    <p class="sub">12-week coaching for dads who want visible results without starving or living in the gym. Drop 10–20 lbs, build muscle, and feel attractive again—while showing up stronger for your kids.</p>
+    <div class="cta-row" role="group" aria-label="Primary actions">
+      <a class="btn" href="#apply">
+        <svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px"><path fill="#111" d="M13 5l7 7-7 7M5 12h14"/></svg>
+        <span>Start Your Assessment</span>
+      </a>
+      <a class="btn outline" href="#proof" aria-label="See client wins">See Client Wins</a>
     </div>
-
-    <div class="hero__copy">
-      <span class="pill">House of Bossman</span>
-      <h1><span class="gold">Command Your Body.</span> Command Your Life.</h1>
-      <p class="lead">
-        12-week coaching for dads who want visible results without starving or living in the gym.
-        Drop 10–20 lbs, build muscle, and show up stronger for your kids.
-      </p>
-
-      <div class="cta-row">
-        <!-- TODO: Replace the href below with your real assessment form URL -->
-        <a id="apply" class="btn btn--gold btn--lg" href="https://forms.gle/YOUR-FORM-ID">Start Your Assessment</a>
-
-        <div class="pay-row">
-          <a class="chip" href="#apply">Join The House</a>
-          <a class="chip" href="https://www.paypal.me/houseofbsm" target="_blank" rel="noopener">PayPal</a>
-          <a class="chip" href="https://cash.app/$houseofbsm" target="_blank" rel="noopener">Cash App</a>
-        </div>
-      </div>
+    <div class="hero-card" aria-live="polite">
+      <div>✔️ Weekly 1:1 accountability</div>
+      <div>✔️ Gym or home training</div>
+      <div>✔️ Nutrition that fits custody life</div>
     </div>
   </main>
 
   <!-- About -->
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p>
-      The Bossman System is simple: strength first, discipline always.
-      No endless cardio. No starving. Just tight nutrition, efficient training, and accountability that actually sticks.
-    </p>
+  <section id="about" class="section container two">
+    <div>
+      <h2>About The House of Bossman</h2>
+      <p class="muted">Discipline builds the body. Leadership builds the household. The Bossman System gives dads a simple, repeatable path to get lean, strong, and respected again—without living in the gym or wrecking your schedule.</p>
+      <div class="cta-row">
+        <a class="btn" href="#apply">Join The House</a>
+        <a class="chip" href="#program">How it works</a>
+      </div>
+    </div>
+    <aside class="card">
+      <h3>My Promise</h3>
+      <p>See visible results in 12 weeks—or I’ll coach you free until you do. I have faith in you. The rest is discipline.</p>
+    </aside>
   </section>
 
-  <!-- Programs -->
-  <section id="programs" class="section">
-    <h2>Programs</h2>
-    <ul class="list">
-      <li><strong>12-Week Dad Rebuild:</strong> Drop 10–20 lbs, regain energy, and lead at home.</li>
-      <li><strong>Bossman Cut:</strong> Tighten waist, keep muscle, look athletic in clothes.</li>
-      <li><strong>Accountability & Check-ins:</strong> Weekly progress reviews, adjustments, and momentum.</li>
-    </ul>
+  <!-- Program -->
+  <section id="program" class="section container two">
+    <div>
+      <h2>Programs</h2>
+      <div class="cards" style="grid-template-columns:1fr">
+        <article class="card">
+          <span class="badge">Flagship</span>
+          <h3>Bossman System — 12 Weeks</h3>
+          <ul>
+            <li>Custom training (3–4 days/week), gym or home</li>
+            <li>Nutrition blueprint (no crash diets)</li>
+            <li>Weekly 1:1 check-ins + form reviews</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <aside class="card">
+      <h3>Accountability Built In</h3>
+      <p>You won’t “try this later.” You’ll execute now. I keep it simple and enforce standards.</p>
+      <a class="btn" href="#apply">Start Assessment</a>
+    </aside>
   </section>
 
-  <!-- Testimonials (placeholders to be swapped later) -->
-  <section id="testimonials" class="section">
-    <h2>Testimonials</h2>
-    <div class="cards">
-      <article class="card">
-        <p>“Down 16 lbs, strength up, and my kids notice. This system works.”</p>
-        <span class="card__meta">— J., Father of 2</span>
+  <!-- Social Proof -->
+  <section id="proof" class="section container">
+    <h2>Wins from Dads Like You</h2>
+    <p class="muted">Real transformations. Real confidence.</p>
+    <div class="cards" role="list">
+      <article class="card" role="listitem">
+        <span class="badge">Verified</span>
+        <h3>“Down 18 lbs in 10 weeks”</h3>
+        <p>Kept muscle, lost the gut, and felt comfortable taking my shirt off at the pool with my kids.</p>
+        <span class="badge">D.M.</span>
       </article>
-      <article class="card">
-        <p>“No cardio marathons. Just discipline and results. I feel like myself again.”</p>
-        <span class="card__meta">— M., New Dad</span>
+      <article class="card" role="listitem">
+        <span class="badge">Verified</span>
+        <h3>“Energy + Confidence back”</h3>
+        <p>Went from low energy to crushing workouts and actually looking forward to dates again.</p>
+        <span class="badge">J.R.</span>
+      </article>
+      <article class="card" role="listitem">
+        <span class="badge">Verified</span>
+        <h3>“Finally understand macros”</h3>
+        <p>The food plan worked with my custody schedule—no stress, no guesswork.</p>
+        <span class="badge">A.K.</span>
       </article>
     </div>
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="section">
-    <h2>Pricing</h2>
-    <div class="pricing">
-      <div class="price">
-        <h3>12-Week Coaching</h3>
-        <p class="muted">Custom plan, check-ins, and direct accountability.</p>
-        <a class="btn btn--gold" href="#apply">Apply Now</a>
-      </div>
+  <section id="pricing" class="section container">
+    <h2>Simple Pricing</h2>
+    <p class="muted">Premium coaching. Pay once or use a plan. Community option available.</p>
+    <div class="cards">
+      <article class="card">
+        <span class="badge">Most Popular</span>
+        <h3>Bossman System — 12 Weeks</h3>
+        <div class="price"><span class="big">$1,500</span><span class="muted">one-time</span></div>
+        <ul>
+          <li>Custom plan + weekly 1:1 calls</li>
+          <li>Nutrition targets & templates</li>
+          <li>Messenger support</li>
+          <li>Form checks & adjustments</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn" href="#apply">Apply Now</a>
+          <a class="btn outline" href="#pay-modal" onclick="openPayModal(event)">How to Pay</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="badge">Flexible</span>
+        <h3>Payment Plan</h3>
+        <div class="price"><span class="big">$600</span><span class="muted">/ mo × 3</span></div>
+        <p class="muted">Same program, split into payments.</p>
+        <div class="cta-row">
+          <a class="btn" href="#apply">Apply — Payment Plan</a>
+          <a class="btn outline" href="#pay-modal" onclick="openPayModal(event)">How to Pay</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="badge">Community</span>
+        <h3>Bossman Brotherhood (Founding)</h3>
+        <div class="price"><span class="big">$9.99</span><span class="muted">/ mo</span></div>
+        <ul>
+          <li>Weekly group call</li>
+          <li>Accountability check-ins</li>
+          <li>Member-only resources</li>
+        </ul>
+        <div class="cta-row">
+          <!-- Stripe can be added later; for now use How to Pay -->
+          <a class="btn" href="#pay-modal" onclick="openPayModal(event)">Join — $9.99/mo</a>
+          <a class="btn outline" href="/members.html">Members Area</a>
+        </div>
+      </article>
     </div>
   </section>
 
+  <!-- Apply -->
+  <section id="apply" class="section container two">
+    <div>
+      <h2>Start Your Assessment</h2>
+      <p class="muted">Takes 2–3 minutes. I’ll review and send you a link to a quick call.</p>
+      <ol>
+        <li>Complete the form</li>
+        <li>Book a 10-min call</li>
+        <li>Get your plan + start week 1</li>
+      </ol>
+      <div class="cta-row">
+        <!-- Your real Google Form -->
+        <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px"><path fill="#111" d="M13 5l7 7-7 7M5 12h14"/></svg>
+          <span>Start Your Assessment</span>
+        </a>
+        <a class="btn outline" href="mailto:marcuscreese4@gmail.com">Email Me</a>
+      </div>
+      <p class="muted" style="margin-top:8px">Prefer DM? IG/TikTok: @max._.julien</p>
+    </div>
+
+    <!-- Quick Lead Form (emails you via Formspree; optional) -->
+    <form class="card" action="https://formspree.io/f/xblzzpoa" method="POST" aria-label="Quick interest form">
+      <label class="muted" for="name">Name</label>
+      <input id="name" name="name" required placeholder="Your name"
+             style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;">
+      <label class="muted" for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com"
+             style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;">
+      <label class="muted" for="goal">Goal</label>
+      <textarea id="goal" name="goal" rows="3"
+                placeholder="Drop 15 lbs, build chest/shoulders, more energy for my kids…"
+                style="width:100%;padding:12px;border-radius:12px;border:1px solid #2a2a2a;background:#0d0d0d;color:#f3f3f3;"></textarea>
+      <input type="hidden" name="_subject" value="New Bossman System lead">
+      <button class="btn" type="submit" style="margin-top:12px;">Submit</button>
+    </form>
+  </section>
+
   <!-- Footer -->
-  <footer class="footer">
-    <p>© <span id="y"></span> Bossman System. All rights reserved.</p>
-    <nav class="footer__links">
-      <a href="/sitemap.xml">Sitemap</a>
-      <a href="/robots.txt">Robots</a>
-    </nav>
+  <footer class="container">
+    <div class="foot">
+      <div class="brand">
+        <img class="brand-logo" src="assets/bsm-seal.png" alt="Bossman System logo">
+        <span class="muted">© <span id="y"></span> Bossman System</span>
+      </div>
+      <div class="muted">
+        <a href="https://instagram.com/max._.julien" target="_blank" rel="noopener">Instagram</a> |
+        <a href="https://www.facebook.com/PremoCreese" target="_blank" rel="noopener">Facebook</a> |
+        <a href="https://www.tiktok.com/@marcus.creese" target="_blank" rel="noopener">TikTok</a> |
+        <a href="mailto:marcuscreese4@gmail.com">Email</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta" role="complementary" aria-label="Quick Apply bar">
+    <div class="meta">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Bossman System</span>
+    </div>
+    <a class="btn" href="https://forms.gle/zqNKXEdhWR6UJ5CM9" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px"><path fill="#111" d="M13 5l7 7-7 7M5 12h14"/></svg>
+      <span>Start</span>
+    </a>
+  </div>
+
+  <!-- Payment Instructions Modal -->
+  <div id="pay-modal" class="paymodal" aria-hidden="true" role="dialog" aria-label="Payment Instructions">
+    <div class="paymodal__box">
+      <button class="paymodal__close" aria-label="Close" onclick="closePayModal()">✕</button>
+
+      <img class="paymodal__seal" src="assets/bsm-seal.png" alt="Bossman Seal" />
+      <h3 class="paymodal__title">Payment Instructions</h3>
+      <p class="paymodal__lead">Fastest path: Cash App. Apple Pay / Card coming next.</p>
+
+      <div class="paymodal__grid">
+        <div class="paymodal__col">
+          <h4>1) Cash App</h4>
+          <p class="muted">Send to: <strong>$maxjulienn</strong></p>
+
+          <!-- QR for desktop users -->
+          <img class="paymodal__qr"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fcash.app%2F%24maxjulienn"
+                alt="Cash App QR for $maxjulienn" width="220" height="220"/>
+
+          <a class="btn" target="_blank" rel="noopener" href="https://cash.app/$maxjulienn">Open Cash App</a>
+        </div>
+
+        <div class="paymodal__col">
+          <h4>2) Note Format (copy this)</h4>
+          <p class="muted">Use this in the payment note so we can match you fast:</p>
+
+          <div class="paymodal__copyrow">
+            <input id="paynote" class="paymodal__input" type="text" readonly
+                  value="Full Name — Program (Bossman 12 / Plan / Brotherhood) — Phone/Email"/>
+            <button class="btn" onclick="copyPayNote()">Copy</button>
+          </div>
+
+          <ul class="muted" style="margin-top:10px">
+            <li>Example: <em>John Smith — Bossman 12 — 303-555-1212</em></li>
+            <li>Amounts: <strong>$1,500</strong> (one-time) / <strong>$600</strong> (plan) / <strong>$9.99</strong> (Brotherhood)</li>
+            <li>You’ll get a confirmation email + start steps.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="paymodal__col" style="text-align:center">
+        <h4>3) Prefer Invoice?</h4>
+        <p class="muted">I’ll email you an invoice for card/Apple Pay.</p>
+        <a class="btn outline"
+           href="mailto:marcuscreese4@gmail.com?subject=Bossman%20Invoice%20Request&body=Name%3A%0APhone%3A%0AProgram%3A%20Bossman%2012%20%2F%20Plan%20%2F%20Brotherhood%0APreferred%20method%3A%20Apple%20Pay%20%2F%20Card%0A">
+           Email Invoice</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal JS -->
   <script>
-    // year
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Payment modal controls
+    function openPayModal(e){ if(e) e.preventDefault(); const m=document.getElementById('pay-modal'); if(m) m.setAttribute('aria-hidden','false'); }
+    function closePayModal(){ const m=document.getElementById('pay-modal'); if(m) m.setAttribute('aria-hidden','true'); }
+    function copyPayNote(){
+      const el=document.getElementById('paynote'); if(!el) return;
+      el.select(); el.setSelectionRange(0, 99999);
+      try{ document.execCommand('copy'); }catch(e){}
+    }
+    document.addEventListener('click',(ev)=>{ const m=document.getElementById('pay-modal'); if(ev.target===m) closePayModal(); });
+    document.addEventListener('keydown',(ev)=>{ if(ev.key==='Escape') closePayModal(); });
   </script>
 </body>
 </html>
-
-
